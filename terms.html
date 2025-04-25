@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Dommatos | Términos y Condiciones</title>
+    <meta name="description" content="Términos y condiciones de uso de la aplicación y dashboard Dommatos, protección de datos, soporte MinTIC y financiación de paneles solares.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/lineicons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background:#f7f7f7;">
+    <header style="background:#fff;box-shadow:0 2px 8px 0 rgba(87,87,89,0.04);padding:24px 0;">
+        <div class="container text-center">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Dommatos Logo" style="max-width:180px;"></a>
+        </div>
+    </header>
+    <main>
+        <section id="terms" class="about-area pt-70 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center pb-25">
+                            <h3 class="title" data-i18n="terms_title"></h3>
+                        </div>
+                        <div class="terms-content" style="background:#fff; border-radius:16px; box-shadow:0 2px 16px 0 rgba(87,87,89,0.07); padding:32px;">
+                            <p class="text" data-i18n="terms_intro"></p>
+                            <ul style="margin-top:24px;">
+                                <li style="margin-bottom:16px;"><b data-i18n="terms_habeas_title"></b><br><span data-i18n="terms_habeas"></span></li>
+                                <li style="margin-bottom:16px;"><b data-i18n="terms_data_title"></b><br><span data-i18n="terms_data"></span></li>
+                                <li style="margin-bottom:16px;"><b data-i18n="terms_mintic_title"></b><br><span data-i18n="terms_mintic"></span></li>
+                                <li style="margin-bottom:16px;"><b data-i18n="terms_finance_title"></b><br><span data-i18n="terms_finance"></span></li>
+                            </ul>
+                        </div>
+                        <div class="text-center mt-4" id="return-btn-container" style="display:none;">
+                            <a href="#" id="return-btn" class="main-btn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/i18n.js"></script>
+    <script>
+    // Lógica para mostrar y configurar el botón de retorno según el contexto de la URL
+    (function() {
+        function getQueryParam(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+        var origin = getQueryParam('origin');
+        var btnContainer = document.getElementById('return-btn-container');
+        var btn = document.getElementById('return-btn');
+        if (origin === 'dommatos') {
+            btn.href = 'index.html';
+            btn.textContent = 'Volver al inicio';
+            btnContainer.style.display = 'block';
+        } else if (origin === 'dashboard') {
+            btn.href = 'https://dashboard.dommatos.com';
+            btn.textContent = 'Volver al dashboard';
+            btnContainer.style.display = 'block';
+        } else {
+            btnContainer.style.display = 'none';
+        }
+    })();
+    </script>
+</body>
+</html>

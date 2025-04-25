@@ -156,6 +156,25 @@ p {
       background-color: var(--dommatos-orange);
       color: #fff;
       border-color: var(--dommatos-orange); }
+.main-btn.login-btn {
+  background: linear-gradient(90deg, var(--dommatos-yellow) 0%, var(--dommatos-orange) 100%);
+  color: #fff;
+  border: 2px solid var(--dommatos-gray);
+  border-radius: 30px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px 0 rgba(253, 185, 22, 0.15);
+  padding: 0 32px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 10px;
+  letter-spacing: 0.9px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.main-btn.login-btn:hover {
+  background: linear-gradient(90deg, var(--dommatos-dark-orange) 0%, var(--dommatos-yellow) 100%);
+  box-shadow: 0 6px 24px 0 rgba(245, 148, 29, 0.18);
+  color: #fff;
+}
 
 @keyframes animation1 {
   0% {
@@ -1110,6 +1129,47 @@ p {
 .about-content .main-btn {
   margin-top: 40px; }
 
+/*===== SOLAR SECTION =====*/
+#solar .about-image {
+  margin-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#solar .about-image .app {
+  max-width: 320px;
+  width: 100%;
+  position: static;
+  box-shadow: 0 4px 24px 0 rgba(87,87,89,0.10);
+  border-radius: 24px;
+}
+@media (max-width: 991px) {
+  #solar .about-image {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  #solar .about-image .app {
+    max-width: 220px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  #solar .about-image {
+    margin-bottom: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #solar .about-image .app {
+    max-width: 180px;
+    margin-bottom: 0;
+  }
+  #solar .about-content {
+    margin-top: 0;
+  }
+}
 
 /*===========================
      10.DOWNLOAD css 
