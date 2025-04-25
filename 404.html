@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>404 | Página no encontrada - Dommatos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/lineicons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .error-404-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .error-404-title {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--dommatos-yellow, #fdb916);
+        }
+        .error-404-msg {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--dommatos-gray, #575759);
+        }
+        .main-btn {
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body style="background:#f7f7f7;">
+    <header style="background:#fff;box-shadow:0 2px 8px 0 rgba(87,87,89,0.04);padding:24px 0;">
+        <div class="container text-center">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Dommatos Logo" style="max-width:180px;"></a>
+        </div>
+    </header>
+    <main>
+        <div class="container error-404-container">
+            <div class="error-404-title">404</div>
+            <div class="error-404-msg" data-i18n="404_msg"></div>
+            <a href="index.html" class="main-btn" data-i18n="404_btn"></a>
+        </div>
+    </main>
+    <script src="assets/js/i18n.js"></script>
+    <script>
+      // Fallback para el texto si i18n tarda en cargar
+      document.querySelector('[data-i18n="404_msg"]').textContent =
+        document.documentElement.lang === 'en'
+          ? 'Sorry, the page you are looking for does not exist.'
+          : 'Lo sentimos, la página que buscas no existe.';
+      document.querySelector('[data-i18n="404_btn"]').textContent =
+        document.documentElement.lang === 'en'
+          ? 'Go to Home'
+          : 'Volver al inicio';
+    </script>
+</body>
+</html>
