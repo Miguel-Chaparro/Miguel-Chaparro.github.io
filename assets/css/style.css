@@ -752,7 +752,8 @@ p {
   position: relative;
   z-index: 5;
   background-position: bottom center;
-  height: 800px; }
+  height: 800px;
+  background: linear-gradient(135deg, #fffdf5 0%, #fff 100%); }
   @media only screen and (min-width: 1400px) {
     .header-hero {
       height: 900px; } }
@@ -977,18 +978,17 @@ p {
       03.SERVICES css 
 ===========================*/
 .single-services {
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(154, 154, 154, 0.16);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(154, 154, 154, 0.16);
-  box-shadow: 0px 0px 10px 0px rgba(154, 154, 154, 0.16);
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-  padding: 45px 25px 35px; }
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+  height: 100%;
+}
   @media (max-width: 767px) {
     .single-services {
-      padding: 40px 20px 30px; } }
+      padding: 30px 20px; } }
   .single-services .services-icon {
     width: 79px;
     height: 79px;
@@ -1007,13 +1007,10 @@ p {
       height: 100%;
       top: 0;
       left: 0;
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      transform: scale(1.2);
       border-radius: 50%;
-      z-index: -1; }
+      z-index: -1;
+      opacity: 0.1;
+      background: currentColor; }
   .single-services .services-content {
     margin-top: 35px; }
     .single-services .services-content .services-title a {
@@ -1055,9 +1052,10 @@ p {
   .single-services.services-color-4 .services-content .services-title a:hover {
     color: var(--dommatos-gray); }
   .single-services:hover {
-    -webkit-box-shadow: 0px 15px 17px 0px rgba(154, 154, 154, 0.16);
-    -moz-box-shadow: 0px 15px 17px 0px rgba(154, 154, 154, 0.16);
-    box-shadow: 0px 15px 17px 0px rgba(154, 154, 154, 0.16); }
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(253, 185, 22, 0.15);
+    border-color: var(--dommatos-yellow);
+  }
 
 /*===========================
        04.ABOUT css 
