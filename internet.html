@@ -77,7 +77,7 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300 animate-page-enter">
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
     <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
         <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
             <div class="flex items-center gap-3 pr-4">
@@ -144,413 +144,429 @@
         </nav>
     </div>
 
-    <main class="flex-grow">
-        <section class="relative overflow-hidden pt-16 pb-32 lg:pt-32">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-background-dark/80 z-10 mix-blend-multiply"></div>
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-background-dark/90 via-background-dark/60 to-background-dark z-10">
+    </div>
+
+    <div id="page-content" class="animate-page-enter">
+
+        <main class="flex-grow">
+            <section class="relative overflow-hidden pt-16 pb-32 lg:pt-32">
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-background-dark/80 z-10 mix-blend-multiply"></div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-background-dark/90 via-background-dark/60 to-background-dark z-10">
+                    </div>
+                    <div class="h-full w-full bg-cover bg-center grayscale brightness-75 contrast-125"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRAzY2DPaADJLhR9APZAVb3VcN-mrAOzwBtFxzQBiicEAUSsBPb7NXM8JNTVANOFdZX3gjikw2sJMV2ga07FzRkl44jJcrXrBvBCAT_YmOJAv-DFoGXF6aThDDNKt06A6gzsRuuNqm0xjH2X7e0SMJ6AOzeAfgWErPrPytIQ8MU1JAJ1M9hcjuD9BsRkbmWTnTQtl2ieBunm81AFDCZdbfDkZF0432-g1uUbzZQWTMyEkou3eijt5N_ydqjBl-5OdNGwcwY9fkPF1Z');">
+                    </div>
                 </div>
-                <div class="h-full w-full bg-cover bg-center grayscale brightness-75 contrast-125"
-                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRAzY2DPaADJLhR9APZAVb3VcN-mrAOzwBtFxzQBiicEAUSsBPb7NXM8JNTVANOFdZX3gjikw2sJMV2ga07FzRkl44jJcrXrBvBCAT_YmOJAv-DFoGXF6aThDDNKt06A6gzsRuuNqm0xjH2X7e0SMJ6AOzeAfgWErPrPytIQ8MU1JAJ1M9hcjuD9BsRkbmWTnTQtl2ieBunm81AFDCZdbfDkZF0432-g1uUbzZQWTMyEkou3eijt5N_ydqjBl-5OdNGwcwY9fkPF1Z');">
-                </div>
-            </div>
-            <div class="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div
-                    class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm text-primary mb-8 backdrop-blur-sm">
-                    <span class="relative flex h-2 w-2">
+                <div class="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div
+                        class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-sm text-primary mb-8 backdrop-blur-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Ahora disponible en tu zona
+                    </div>
+                    <h1
+                        class="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl font-display mb-6 leading-tight">
+                        Internet a la <br />
                         <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    Ahora disponible en tu zona
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">Velocidad
+                            de
+                            la Luz</span>
+                    </h1>
+                    <p class="mx-auto max-w-2xl text-lg text-text-secondary mb-10">
+                        Conecta tu hogar inteligente con la fibra óptica más estable de la región. Diseñada para
+                        velocidad,
+                        fiabilidad y el futuro de la automatización.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button
+                            class="glow-hover w-full sm:w-auto bg-primary hover:bg-primary/90 text-slate-900 text-base font-bold py-3 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:shadow-[0_0_30px_rgba(253,185,22,0.5)]">
+                            Verificar Cobertura
+                        </button>
+                        <button
+                            class="w-full sm:w-auto bg-surface-dark/50 border border-surface-border/50 hover:bg-surface-border/80 text-white text-base font-medium py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2 backdrop-blur-md">
+                            Ver Planes
+                            <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+                        </button>
+                    </div>
                 </div>
-                <h1
-                    class="mx-auto max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl font-display mb-6 leading-tight">
-                    Internet a la <br />
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">Velocidad de
-                        la Luz</span>
-                </h1>
-                <p class="mx-auto max-w-2xl text-lg text-text-secondary mb-10">
-                    Conecta tu hogar inteligente con la fibra óptica más estable de la región. Diseñada para velocidad,
-                    fiabilidad y el futuro de la automatización.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button
-                        class="glow-hover w-full sm:w-auto bg-primary hover:bg-primary/90 text-slate-900 text-base font-bold py-3 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:shadow-[0_0_30px_rgba(253,185,22,0.5)]">
-                        Verificar Cobertura
-                    </button>
-                    <button
-                        class="w-full sm:w-auto bg-surface-dark/50 border border-surface-border/50 hover:bg-surface-border/80 text-white text-base font-medium py-3 px-8 rounded-lg transition-colors flex items-center justify-center gap-2 backdrop-blur-md">
-                        Ver Planes
-                        <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
-                    </button>
+                <div class="absolute top-1/4 left-10 w-24 h-24 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+                <div
+                    class="absolute bottom-1/4 right-10 w-32 h-32 bg-yellow-600/20 rounded-full blur-3xl animate-pulse delay-700">
                 </div>
-            </div>
-            <div class="absolute top-1/4 left-10 w-24 h-24 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+            </section>
+
             <div
-                class="absolute bottom-1/4 right-10 w-32 h-32 bg-yellow-600/20 rounded-full blur-3xl animate-pulse delay-700">
-            </div>
-        </section>
-
-        <div
-            class="border-y border-surface-border/30 bg-surface-dark/80 backdrop-blur-md relative z-30 -mt-16 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-lg">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 px-4">
-                <div
-                    class="text-center border-r border-surface-border/30 last:border-0 md:last:border-0 [&amp;:nth-child(2)]:border-0 md:[&amp;:nth-child(2)]:border-r">
-                    <div class="text-3xl font-bold text-white font-display mb-1">1 Gbps</div>
-                    <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Velocidad Máx</div>
-                </div>
-                <div class="text-center md:border-r border-surface-border/30">
-                    <div class="text-3xl font-bold text-white font-display mb-1">99.9%</div>
-                    <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Uptime</div>
-                </div>
-                <div
-                    class="text-center border-r border-surface-border/30 [&amp;:nth-child(2)]:border-0 md:[&amp;:nth-child(2)]:border-r">
-                    <div class="text-3xl font-bold text-white font-display mb-1">&lt;5ms</div>
-                    <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Latencia</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-white font-display mb-1">24/7</div>
-                    <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Soporte</div>
-                </div>
-            </div>
-        </div>
-
-        <section class="py-24 bg-background-dark" id="planes">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-16 md:text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-4">
-                        ¿Por qué elegir Fibra Dommatos?
-                    </h2>
-                    <p class="text-text-secondary text-lg">
-                        Experimenta la base para un verdadero hogar inteligente. Nuestro servicio de internet está
-                        optimizado para baja latencia y dispositivos de alto ancho de banda.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                class="border-y border-surface-border/30 bg-surface-dark/80 backdrop-blur-md relative z-30 -mt-16 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-lg">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 px-4">
                     <div
-                        class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                        <div
-                            class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="relative">
-                            <div
-                                class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                <span class="material-symbols-outlined text-[32px]">speed</span>
-                            </div>
-                            <h3 class="mb-3 text-xl font-bold text-white font-display">Latencia Ultra Baja</h3>
-                            <p class="text-text-secondary leading-relaxed">
-                                Enrutamiento optimizado para juegos y comunicación en tiempo real sin lag. Perfecto para
-                                gaming competitivo.
-                            </p>
+                        class="text-center border-r border-surface-border/30 last:border-0 md:last:border-0 [&amp;:nth-child(2)]:border-0 md:[&amp;:nth-child(2)]:border-r">
+                        <div class="text-3xl font-bold text-white font-display mb-1">1 Gbps</div>
+                        <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Velocidad Máx
                         </div>
                     </div>
-                    <div
-                        class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                        <div
-                            class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="relative">
-                            <div
-                                class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                <span class="material-symbols-outlined text-[28px]">home_iot_device</span>
-                            </div>
-                            <h3 class="mb-3 text-xl font-bold text-white font-display">Listo para Smart Home</h3>
-                            <p class="text-text-secondary leading-relaxed">
-                                Integración perfecta con nuestros sistemas de Domótica y monitorización de energía
-                                Solar. Tu casa, conectada.
-                            </p>
-                        </div>
+                    <div class="text-center md:border-r border-surface-border/30">
+                        <div class="text-3xl font-bold text-white font-display mb-1">99.9%</div>
+                        <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Uptime</div>
                     </div>
                     <div
-                        class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                        <div
-                            class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                        <div class="relative">
-                            <div
-                                class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                <span class="material-symbols-outlined text-[28px]">support_agent</span>
-                            </div>
-                            <h3 class="mb-3 text-xl font-bold text-white font-display">Soporte Humano Experto</h3>
-                            <p class="text-text-secondary leading-relaxed">
-                                Línea directa con expertos técnicos. También ofrecemos asistencia de Chatbot con IA para
-                                solución de problemas instantánea.
-                            </p>
-                        </div>
+                        class="text-center border-r border-surface-border/30 [&amp;:nth-child(2)]:border-0 md:[&amp;:nth-child(2)]:border-r">
+                        <div class="text-3xl font-bold text-white font-display mb-1">&lt;5ms</div>
+                        <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Latencia</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white font-display mb-1">24/7</div>
+                        <div class="text-xs text-text-secondary uppercase tracking-wider font-semibold">Soporte</div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="py-24 bg-gradient-to-b from-background-dark to-surface-dark">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-16 md:text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-4">
-                        Precios Simples y Transparentes
-                    </h2>
-                    <p class="text-text-secondary text-lg">
-                        Sin tarifas ocultas. Sin límites de datos. Solo velocidad pura.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div
-                        class="flex flex-col rounded-2xl border border-surface-border/40 bg-surface-dark/30 p-8 hover:shadow-xl transition-shadow relative">
-                        <div class="mb-6">
-                            <h3 class="text-xl font-bold text-white font-display">Básico</h3>
-                            <p class="text-text-secondary text-sm mt-1">Conectividad esencial</p>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-4xl font-bold text-white font-display">$30</span>
-                            <span class="text-text-secondary font-medium">/mes</span>
-                        </div>
-                        <ul class="mb-8 space-y-4 flex-1">
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                100 Mbps Descarga
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Datos Ilimitados
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Router Estándar
-                            </li>
-                        </ul>
-                        <button
-                            class="w-full rounded-lg bg-surface-border/50 hover:bg-surface-border border border-transparent text-white py-3 px-4 text-sm font-bold transition-colors">
-                            Elegir Básico
-                        </button>
-                    </div>
-                    <div
-                        class="flex flex-col rounded-2xl border-2 border-primary bg-surface-dark p-8 shadow-[0_0_30px_rgba(253,185,22,0.1)] relative scale-105 z-10">
-                        <div
-                            class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-background-dark uppercase tracking-wider">
-                            Más Popular
-                        </div>
-                        <div class="mb-6">
-                            <h3 class="text-xl font-bold text-white font-display">Gamer / Streamer</h3>
-                            <p class="text-text-secondary text-sm mt-1">Potencia simétrica</p>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-5xl font-bold text-white font-display">$50</span>
-                            <span class="text-text-secondary font-medium">/mes</span>
-                        </div>
-                        <ul class="mb-8 space-y-4 flex-1">
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                500 Mbps Simétricos
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Prioridad Baja Latencia
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Router Gaming Incluido
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-white font-medium">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Soporte Prioritario
-                            </li>
-                        </ul>
-                        <button
-                            class="glow-hover w-full rounded-lg bg-primary hover:bg-primary/90 text-slate-900 py-3 px-4 text-sm font-bold transition-all shadow-lg shadow-primary/20">
-                            Elegir Gamer
-                        </button>
-                    </div>
-                    <div
-                        class="flex flex-col rounded-2xl border border-surface-border/40 bg-surface-dark/30 p-8 hover:shadow-xl transition-shadow relative">
-                        <div class="mb-6">
-                            <h3 class="text-xl font-bold text-white font-display">Hogar Futuro</h3>
-                            <p class="text-text-secondary text-sm mt-1">Hogar inteligente definitivo</p>
-                        </div>
-                        <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-4xl font-bold text-white font-display">$80</span>
-                            <span class="text-text-secondary font-medium">/mes</span>
-                        </div>
-                        <ul class="mb-8 space-y-4 flex-1">
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                1 Gbps Simétrico
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                IP Estática Disponible
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Sistema Mesh Wi-Fi
-                            </li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300">
-                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
-                                Integración Monitor Solar
-                            </li>
-                        </ul>
-                        <button
-                            class="w-full rounded-lg bg-surface-border/50 hover:bg-surface-border border border-transparent text-white py-3 px-4 text-sm font-bold transition-colors">
-                            Elegir Futuro
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 bg-background-dark border-t border-surface-border/30">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <div class="flex-1 space-y-8">
-                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display">
-                            El Corazón de tu <span class="text-primary">Ecosistema Conectado</span>
+            <section class="py-24 bg-background-dark" id="planes">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16 md:text-center max-w-3xl mx-auto">
+                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-4">
+                            ¿Por qué elegir Fibra Dommatos?
                         </h2>
                         <p class="text-text-secondary text-lg">
-                            Dommatos Internet no es solo una conexión; es el sistema nervioso de tu hogar inteligente.
-                            Intégralo sin problemas con nuestros paneles solares y sistemas de automatización para un
-                            hogar que piensa por sí mismo.
+                            Experimenta la base para un verdadero hogar inteligente. Nuestro servicio de internet está
+                            optimizado para baja latencia y dispositivos de alto ancho de banda.
                         </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="flex gap-4">
-                                <div
-                                    class="shrink-0 size-10 rounded-full bg-surface-border/30 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined text-[24px]">solar_power</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-bold mb-1">Monitoreo Solar</h4>
-                                    <p class="text-sm text-text-secondary">Estadísticas de energía en tiempo real.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div
-                                    class="shrink-0 size-10 rounded-full bg-surface-border/30 flex items-center justify-center text-primary">
-                                    <span class="material-symbols-outlined text-[24px]">smart_toy</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-bold mb-1">Soporte Chatbot</h4>
-                                    <p class="text-sm text-text-secondary">Asistentes IA que conocen tu red.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pt-4">
-                            <a class="inline-flex items-center text-primary font-bold hover:underline"
-                                href="servicios.html">
-                                Explorar Soluciones Smart Home <span
-                                    class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                            </a>
-                        </div>
                     </div>
-                    <div class="flex-1 w-full max-w-lg lg:max-w-none">
-                        <div class="relative rounded-2xl overflow-hidden border border-surface-border/50 shadow-2xl">
-                            <img alt="Modern smart home living room" class="w-full h-auto object-cover opacity-80"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6NqRLpWxSj7-DyWvPoHlEGGqKXF7jGdo3E0dqNkBe8-79vFozv7_0YP9an5SgovJeFi4nvGtWLNF7xsb6X6jMsCy1ZBeDYjSnDKGUpZ6a9dT59SFqW-cDxWxsbE8JTAY2QWxTykab8HLWNOtyReSeujX1btzALt8ZEjxOBlCH3WJZUYyQiOfMwCQ2seGaUuAWnBvxHV5hZDmf7xRtVdwPr_JJ3JUtA3mn80AymMz_o4Mh7WzDHrbNK7lczF-hufTEwcc4pat3l8Q" />
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                        <div
+                            class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                                class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                             </div>
-                            <div class="absolute bottom-6 left-6 right-6">
+                            <div class="relative">
                                 <div
-                                    class="bg-surface-dark/90 backdrop-blur border border-surface-border/50 p-4 rounded-xl flex items-center gap-4">
-                                    <div
-                                        class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-pulse">
-                                        <span class="material-symbols-outlined">wifi</span>
-                                    </div>
-                                    <div>
-                                        <div class="text-white font-bold text-sm">Estado de Red: Excelente</div>
-                                        <div class="text-text-secondary text-xs">Dommatos Fibra • 940 Mbps</div>
-                                    </div>
+                                    class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <span class="material-symbols-outlined text-[32px]">speed</span>
                                 </div>
+                                <h3 class="mb-3 text-xl font-bold text-white font-display">Latencia Ultra Baja</h3>
+                                <p class="text-text-secondary leading-relaxed">
+                                    Enrutamiento optimizado para juegos y comunicación en tiempo real sin lag. Perfecto
+                                    para
+                                    gaming competitivo.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                            <div
+                                class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <span class="material-symbols-outlined text-[28px]">home_iot_device</span>
+                                </div>
+                                <h3 class="mb-3 text-xl font-bold text-white font-display">Listo para Smart Home</h3>
+                                <p class="text-text-secondary leading-relaxed">
+                                    Integración perfecta con nuestros sistemas de Domótica y monitorización de energía
+                                    Solar. Tu casa, conectada.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative rounded-2xl border border-surface-border/40 bg-surface-dark/50 p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
+                            <div
+                                class="absolute -inset-px rounded-2xl bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div class="relative">
+                                <div
+                                    class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <span class="material-symbols-outlined text-[28px]">support_agent</span>
+                                </div>
+                                <h3 class="mb-3 text-xl font-bold text-white font-display">Soporte Humano Experto</h3>
+                                <p class="text-text-secondary leading-relaxed">
+                                    Línea directa con expertos técnicos. También ofrecemos asistencia de Chatbot con IA
+                                    para
+                                    solución de problemas instantánea.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="py-24 relative overflow-hidden bg-background-dark">
-            <div class="absolute inset-0 bg-primary/5"></div>
-            <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2
-                    class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-6">
-                    ¿Listo para mejorar tu conexión?
-                </h2>
-                <p class="mx-auto max-w-2xl text-lg text-text-secondary mb-10">
-                    Únete a la red construida para el futuro de la energía y la automatización.
-                    <br class="hidden sm:block" />
-                    Cambiar es fácil, rápido y sin preocupaciones.
-                </p>
-                <button
-                    class="glow-hover bg-primary hover:bg-primary/90 text-slate-900 text-lg font-bold py-4 px-10 rounded-lg transition-all shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:scale-105">
-                    Comienza tu contrato hoy
-                </button>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
-        <div class="px-5 md:px-10 lg:px-40 flex justify-center">
-            <div class="max-w-[1200px] w-full flex flex-col gap-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-2 text-white">
-                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
-                        </div>
-                        <p class="text-text-secondary text-sm leading-relaxed">
-                            Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
-                            renovable.
+            <section class="py-24 bg-gradient-to-b from-background-dark to-surface-dark">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-16 md:text-center max-w-3xl mx-auto">
+                        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-4">
+                            Precios Simples y Transparentes
+                        </h2>
+                        <p class="text-text-secondary text-lg">
+                            Sin tarifas ocultas. Sin límites de datos. Solo velocidad pura.
                         </p>
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <h3 class="text-white font-bold">Servicios</h3>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
-                            Fibra</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía Solar</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
-                            IA</a>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h3 class="text-white font-bold">Empresa</h3>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
-                            Nosotros</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h3 class="text-white font-bold">Novedades</h3>
-                        <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
-                            sostenible.</p>
-                        <div class="flex gap-2">
-                            <input
-                                class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
-                                placeholder="Tu email" type="email" />
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div
+                            class="flex flex-col rounded-2xl border border-surface-border/40 bg-surface-dark/30 p-8 hover:shadow-xl transition-shadow relative">
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-white font-display">Básico</h3>
+                                <p class="text-text-secondary text-sm mt-1">Conectividad esencial</p>
+                            </div>
+                            <div class="mb-6 flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white font-display">$30</span>
+                                <span class="text-text-secondary font-medium">/mes</span>
+                            </div>
+                            <ul class="mb-8 space-y-4 flex-1">
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    100 Mbps Descarga
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Datos Ilimitados
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Router Estándar
+                                </li>
+                            </ul>
                             <button
-                                class="bg-primary text-background-dark rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
-                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                class="w-full rounded-lg bg-surface-border/50 hover:bg-surface-border border border-transparent text-white py-3 px-4 text-sm font-bold transition-colors">
+                                Elegir Básico
+                            </button>
+                        </div>
+                        <div
+                            class="flex flex-col rounded-2xl border-2 border-primary bg-surface-dark p-8 shadow-[0_0_30px_rgba(253,185,22,0.1)] relative scale-105 z-10">
+                            <div
+                                class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-background-dark uppercase tracking-wider">
+                                Más Popular
+                            </div>
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-white font-display">Gamer / Streamer</h3>
+                                <p class="text-text-secondary text-sm mt-1">Potencia simétrica</p>
+                            </div>
+                            <div class="mb-6 flex items-baseline gap-1">
+                                <span class="text-5xl font-bold text-white font-display">$50</span>
+                                <span class="text-text-secondary font-medium">/mes</span>
+                            </div>
+                            <ul class="mb-8 space-y-4 flex-1">
+                                <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    500 Mbps Simétricos
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Prioridad Baja Latencia
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Router Gaming Incluido
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-white font-medium">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Soporte Prioritario
+                                </li>
+                            </ul>
+                            <button
+                                class="glow-hover w-full rounded-lg bg-primary hover:bg-primary/90 text-slate-900 py-3 px-4 text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                                Elegir Gamer
+                            </button>
+                        </div>
+                        <div
+                            class="flex flex-col rounded-2xl border border-surface-border/40 bg-surface-dark/30 p-8 hover:shadow-xl transition-shadow relative">
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-white font-display">Hogar Futuro</h3>
+                                <p class="text-text-secondary text-sm mt-1">Hogar inteligente definitivo</p>
+                            </div>
+                            <div class="mb-6 flex items-baseline gap-1">
+                                <span class="text-4xl font-bold text-white font-display">$80</span>
+                                <span class="text-text-secondary font-medium">/mes</span>
+                            </div>
+                            <ul class="mb-8 space-y-4 flex-1">
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    1 Gbps Simétrico
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    IP Estática Disponible
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Sistema Mesh Wi-Fi
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-gray-300">
+                                    <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                    Integración Monitor Solar
+                                </li>
+                            </ul>
+                            <button
+                                class="w-full rounded-lg bg-surface-border/50 hover:bg-surface-border border border-transparent text-white py-3 px-4 text-sm font-bold transition-colors">
+                                Elegir Futuro
                             </button>
                         </div>
                     </div>
                 </div>
-                <div
-                    class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
-                    <div class="flex gap-6">
-                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
-                            <span class="text-sm">Privacidad</span>
-                        </a>
-                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
-                            <span class="text-sm">Términos</span>
-                        </a>
+            </section>
+
+            <section class="py-24 bg-background-dark border-t border-surface-border/30">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                        <div class="flex-1 space-y-8">
+                            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl font-display">
+                                El Corazón de tu <span class="text-primary">Ecosistema Conectado</span>
+                            </h2>
+                            <p class="text-text-secondary text-lg">
+                                Dommatos Internet no es solo una conexión; es el sistema nervioso de tu hogar
+                                inteligente.
+                                Intégralo sin problemas con nuestros paneles solares y sistemas de automatización para
+                                un
+                                hogar que piensa por sí mismo.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="shrink-0 size-10 rounded-full bg-surface-border/30 flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined text-[24px]">solar_power</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-1">Monitoreo Solar</h4>
+                                        <p class="text-sm text-text-secondary">Estadísticas de energía en tiempo real.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div
+                                        class="shrink-0 size-10 rounded-full bg-surface-border/30 flex items-center justify-center text-primary">
+                                        <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold mb-1">Soporte Chatbot</h4>
+                                        <p class="text-sm text-text-secondary">Asistentes IA que conocen tu red.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <a class="inline-flex items-center text-primary font-bold hover:underline"
+                                    href="servicios.html">
+                                    Explorar Soluciones Smart Home <span
+                                        class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-1 w-full max-w-lg lg:max-w-none">
+                            <div
+                                class="relative rounded-2xl overflow-hidden border border-surface-border/50 shadow-2xl">
+                                <img alt="Modern smart home living room" class="w-full h-auto object-cover opacity-80"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6NqRLpWxSj7-DyWvPoHlEGGqKXF7jGdo3E0dqNkBe8-79vFozv7_0YP9an5SgovJeFi4nvGtWLNF7xsb6X6jMsCy1ZBeDYjSnDKGUpZ6a9dT59SFqW-cDxWxsbE8JTAY2QWxTykab8HLWNOtyReSeujX1btzALt8ZEjxOBlCH3WJZUYyQiOfMwCQ2seGaUuAWnBvxHV5hZDmf7xRtVdwPr_JJ3JUtA3mn80AymMz_o4Mh7WzDHrbNK7lczF-hufTEwcc4pat3l8Q" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                                </div>
+                                <div class="absolute bottom-6 left-6 right-6">
+                                    <div
+                                        class="bg-surface-dark/90 backdrop-blur border border-surface-border/50 p-4 rounded-xl flex items-center gap-4">
+                                        <div
+                                            class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-pulse">
+                                            <span class="material-symbols-outlined">wifi</span>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-bold text-sm">Estado de Red: Excelente</div>
+                                            <div class="text-text-secondary text-xs">Dommatos Fibra • 940 Mbps</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-24 relative overflow-hidden bg-background-dark">
+                <div class="absolute inset-0 bg-primary/5"></div>
+                <div class="container relative mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2
+                        class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl font-display mb-6">
+                        ¿Listo para mejorar tu conexión?
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-lg text-text-secondary mb-10">
+                        Únete a la red construida para el futuro de la energía y la automatización.
+                        <br class="hidden sm:block" />
+                        Cambiar es fácil, rápido y sin preocupaciones.
+                    </p>
+                    <button
+                        class="glow-hover bg-primary hover:bg-primary/90 text-slate-900 text-lg font-bold py-4 px-10 rounded-lg transition-all shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:scale-105">
+                        Comienza tu contrato hoy
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
+            <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+                <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-2 text-white">
+                                <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                            </div>
+                            <p class="text-text-secondary text-sm leading-relaxed">
+                                Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
+                                renovable.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Servicios</h3>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
+                                Fibra</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía
+                                Solar</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
+                                IA</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Empresa</h3>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
+                                Nosotros</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Novedades</h3>
+                            <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
+                                sostenible.</p>
+                            <div class="flex gap-2">
+                                <input
+                                    class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
+                                    placeholder="Tu email" type="email" />
+                                <button
+                                    class="bg-primary text-background-dark rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                        <div class="flex gap-6">
+                            <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                                <span class="text-sm">Privacidad</span>
+                            </a>
+                            <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                                <span class="text-sm">Términos</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <button
-        class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-background-dark shadow-lg shadow-primary/40 hover:scale-110 hover:bg-white transition-all">
-        <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
-    </button>
+        <button
+            class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-background-dark shadow-lg shadow-primary/40 hover:scale-110 hover:bg-white transition-all">
+            <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
+        </button>
+    </div>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
