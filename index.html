@@ -1,8 +1,8 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html class="dark" lang="es">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Dommatos | Internet, Paneles Solares, Redes, Automatización y Tecnología</title>
     <meta name="description"
         content="Instalación de servicios de Internet, paneles solares, redes y telecomunicaciones, automatización de procesos, chatbots y soluciones de innovación tecnológica. Dommatos: tecnología para tu hogar y empresa con financiación y asesoría personalizada.">
@@ -19,7 +19,6 @@
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="Dommatos Logo">
     <meta property="og:image:secure_url" content="https://dommatos.com/assets/images/logo.png">
-    <meta property="og:image:alt" content="Logo Dommatos">
     <meta property="og:site_name" content="Dommatos">
     <meta property="og:locale" content="es_CO">
     <meta property="og:locale:alternate" content="en_US">
@@ -27,26 +26,51 @@
     <meta property="og:url" content="https://dommatos.com/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://dommatos.com/assets/images/favicon.png">
-    <meta name="twitter:image:alt" content="Logo Dommatos">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="facebook-domain-verification" content="a54x8621ycuymwdzc2x9zo8xlrzzj2" />
+
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 
-    <!--====== Animate CSS ======-->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#fdb916", "background-light": "#f6f8f6",
+                        "background-dark": "#575759", "surface-dark": "#464648", "surface-border": "#717173", "text-secondary": "#e4e4e7"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
 
-    <!--====== lineicons CSS ======-->
-    <link rel="stylesheet" href="assets/css/lineicons.css">
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(253, 185, 22, 0.4);
+        }
 
-    <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
-
-    <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="assets/css/style.css">
+        .layout-container {
+            width: 100%;
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -74,473 +98,361 @@
       ]
     }
     </script>
-
 </head>
 
-<body>
-    <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-    <!--====== PRELOADER PART START ======-->
-
-    <div class="preloader">
-        <div class="loader">
-            <div class="ytp-spinner">
-                <div class="ytp-spinner-container">
-                    <div class="ytp-spinner-rotator">
-                        <div class="ytp-spinner-left">
-                            <div class="ytp-spinner-circle"></div>
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+    <div class="sticky top-0 z-50 w-full border-b border-surface-border bg-background-dark/95 backdrop-blur-sm">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-0">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <header class="flex items-center justify-between whitespace-nowrap py-0">
+                        <div class="flex items-center gap-3 text-white">
+                            <a href="index.html" class="flex items-center gap-3">
+                                <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-20" width="120"
+                                    height="120">
+                            </a>
                         </div>
-                        <div class="ytp-spinner-right">
-                            <div class="ytp-spinner-circle"></div>
+                        <div class="flex flex-1 justify-end gap-8">
+                            <div class="hidden md:flex items-center gap-6 lg:gap-9">
+                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
+                                    href="#internet">Internet</a>
+                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
+                                    href="#solar">Energía Solar</a>
+                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
+                                    href="#servicios">Servicios</a>
+                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
+                                    href="#nosotros">Nosotros</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <a href="https://customer.dommatos.com"
+                                    class="glow-hover hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+                                    <span class="truncate">Clientes</span>
+                                </a>
+                                <a href="https://dashboard.dommatos.com"
+                                    class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
+                                    <span class="truncate">Admin</span>
+                                </a>
+                            </div>
+                            <button class="md:hidden text-white">
+                                <span class="material-symbols-outlined">menu</span>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <div class="@container">
+                        <div class="flex flex-col-reverse gap-6 py-10 lg:flex-row lg:items-center lg:gap-16">
+                            <div class="flex flex-col gap-6 lg:w-1/2 lg:justify-center">
+                                <div class="flex flex-col gap-4 text-left">
+                                    <div
+                                        class="inline-flex items-center gap-2 rounded-full border border-surface-border bg-surface-dark px-3 py-1 w-fit">
+                                        <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                                        <span class="text-xs font-medium text-white">Tecnología Sostenible</span>
+                                    </div>
+                                    <h1
+                                        class="text-slate-900 dark:text-white text-4xl font-black leading-[1.1] tracking-[-0.033em] sm:text-5xl lg:text-6xl">
+                                        Conectando tu <span class="text-primary">Futuro</span> con Energía Limpia
+                                    </h1>
+                                    <h2
+                                        class="text-slate-600 dark:text-text-secondary text-base font-normal leading-relaxed sm:text-lg max-w-[500px]">
+                                        Internet de alta velocidad y soluciones de energía solar integradas para el
+                                        hogar moderno. Control total en tus manos.
+                                    </h2>
+                                </div>
+                                <div class="flex flex-wrap gap-4 pt-2">
+                                    <button
+                                        class="glow-hover flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+                                        <span class="truncate">Ver Planes</span>
+                                    </button>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 border border-surface-border bg-transparent text-slate-900 dark:text-white hover:bg-surface-dark transition-colors text-base font-bold leading-normal tracking-[0.015em]">
+                                        <span class="truncate">Saber Más</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center gap-4 pt-4 text-xs text-text-secondary">
+                                    <div class="flex -space-x-2">
+                                        <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-gray-500 bg-cover bg-center"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzSaSSDWD82mAuERQitx17w3thE-ZFuR_qVqI-Yymjy6BWF65-4D8N_HRaKWdI9ahrCqDKq8FSksM_h7OmEvw8jH6n92fxqiWzZwbFa3asl3GIM6ORQbfFzA87ubMtGhcgfPFdDGzufBf0-tDjKnSD8OF2-WiLUzQJ6wTl_3LkylGwszP1rvwmD3TNswILiW_AFh-9uHF0c5oxWR3mOFPDmkmqWt000k4e2AV9yIRZ2hSzcsY2eEjTYC635uNEcByy6egy2JQsrQZU")'>
+                                        </div>
+                                        <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-gray-500 bg-cover bg-center"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgoNdla9TxNnDjkWyuHOMVd1J8-z3yUYd2sig59z9-ZQ9gzmVFPUC1WXtIgBGsm7dEHnQypQTL1LvwxEhmH5Mf0XKOi7Ie4yeVv6PmqTTuOgU_oK3VoOPUPnJz4-AlAgkxiiZZWJclPeYaIH0i6WEvDXDRc4rlKoITK2AncD4kUs8KW4Cm00JzlrhIOQm9IUDnFvsS858hF6tT9lKyDHtyE8yaD0DMkMaGH6LkoKBZTzhYZjFGOOyi0D0NgohgZJ-7u3zpthINaYd7")'>
+                                        </div>
+                                        <div class="h-8 w-8 rounded-full border-2 border-background-dark bg-gray-500 bg-cover bg-center"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAN6YQkTO_joQsf67AGvu5VlJTUwERrfGW8_3JON9J3zpvrj6XKh5JL9LhtExWlZ82UsgxRzVZjEiHBCTa-G8beCHD59l3dU403-F5_PKO_8J2FcbbEyjBmmN-7_Ic09pApSaZJHRnT_ge-2SK-MK9Ywdk-k7lipXBqjLRE2RiXaLzzYze_fvooCjl5EDZC6H6CflBKFi_8tIjTAaO0RQmLh7xxNzdBkLp6zNRF9N_VgfGYrydtGy-YuoH0TblNtBmT_dxk_-8iSgeV")'>
+                                        </div>
+                                    </div>
+                                    <p>+2.000 Clientes satisfechos</p>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-1/2">
+                                <div
+                                    class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-surface-dark border border-surface-border shadow-2xl">
+                                    <div class="absolute inset-0 bg-cover bg-center"
+                                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWlcwsQ4_cW7UCiyYbxCaBHV8dXMJ_2vytWQDdN3fbOI4gMhkxz6qmH1EO_9B6UC7-ZL_kpGfjavUtqraJ3FEkC6XTVimt0_pNo58ztcnb_iAh9D_aXKiHgEwKMV_kS9HZ8Hd-GhGaGJ8g9qZ3U5si6WItkluzQLUAlfhEVzUDnDl8PdYUD__V-VTS4PARTF89PR_ll4h_YXWECIqtURZG-6hEeWWAKrYxuNUBQesbaw0UM7bMWDe_NRDL69WebM_G8p00amrxXORx");'>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-6 left-6 right-6 rounded-xl bg-background-dark/80 p-4 backdrop-blur-md border border-surface-border sm:right-auto sm:w-64">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
+                                                <span class="material-symbols-outlined">eco</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs font-medium text-text-secondary">Ahorro Energético</p>
+                                                <p class="text-sm font-bold text-white">45% este mes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--====== PRELOADER PART ENDS ======-->
-
-    <!--====== HEADER PART START ======-->
-
-    <header class="header-area">
-        <div class="navbar-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo.png" alt="Dommatos Logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
+    <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <div class="flex flex-col items-start gap-2 border-l-4 border-primary pl-4 my-10">
+                        <h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">
+                            Nuestros Servicios Principales</h2>
+                        <p class="text-slate-600 dark:text-text-secondary text-lg">Todo lo que necesitas para un hogar
+                            inteligente y eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark" id="servicios">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <div class="flex flex-col gap-10 pb-10">
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            <div id="internet"
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">speed</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">Internet Fibra Óptica</h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Navegación ultra
+                                        rápida y estable para tu hogar o empresa con planes simétricos.</p>
+                                </div>
+                            </div>
+                            <div id="solar"
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">solar_power</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">Paneles Solares</h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Energía renovable
+                                        que reduce tu huella de carbono y minimiza tu factura eléctrica.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">home_iot_device</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">Domótica a Medida</h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Control
+                                        inteligente de iluminación, clima y seguridad desde tu móvil.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">smart_toy</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">Chatbots IA</h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Asistentes
+                                        virtuales integrados para gestionar tus servicios 24/7 sin esperas.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">shopping_cart</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">e-Commerce</h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Implementación
+                                        completa de tiendas virtuales y gestión de ventas online.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-6 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_rgba(253,185,22,0.1)]">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-border/30 text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                                    <span class="material-symbols-outlined text-[28px]">business_center</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h2 class="text-white text-lg font-bold leading-tight">Personalización Empresarial
+                                    </h2>
+                                    <p class="text-text-secondary text-sm font-normal leading-relaxed">Soluciones
+                                        tecnológicas a medida para optimizar los procesos de tu empresa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nosotros" class="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-10">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <div class="rounded-2xl bg-surface-dark border border-surface-border overflow-hidden">
+                        <div class="flex flex-col lg:flex-row">
+                            <div class="w-full lg:w-1/2 min-h-[300px] bg-cover bg-center relative"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-UPv9EkUjffFN3F8WNenXOHfZM2SciSNPqQQeaJrpiIQDDY6WE_Bjw1M6JNFZjDI8aATfY0b9UwNys89zEzMVrmyrYE1WqAHrYTXL8ZPk90vSSaGQElV5MKsmKjI7MzeHZE-f5S0L0Q1J8cPzQ-e4YWUZnJMolLiunHgmWBu_xAtIXhQnhnus-gZL5WZqgu1jxQa94kyCkUdLPSsdZVe03VnHrsVi_osaoKzwcvCOZjS_fCfUk7usnNzkHcLc67GRzX_c3y8njn1o");'>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-surface-dark lg:bg-gradient-to-r lg:from-transparent lg:to-surface-dark to-transparent opacity-90">
+                                </div>
+                            </div>
+                            <div class="flex flex-1 flex-col justify-center gap-6 p-8 lg:p-12">
+                                <div class="flex flex-col gap-3">
+                                    <div
+                                        class="flex items-center gap-2 text-primary font-bold tracking-wider text-sm uppercase">
+                                        <span class="material-symbols-outlined text-[20px]">hub</span>
+                                        <span>Ecosistema Unificado</span>
+                                    </div>
+                                    <h2 class="text-white text-3xl font-bold leading-tight">Control Total con App
+                                        Dommatos
+                                    </h2>
+                                    <p class="text-text-secondary text-base font-normal leading-relaxed">
+                                        Gestiona tus paneles solares y tu red de internet desde una única aplicación
+                                        potenciada por IA.
+                                        Supervisa el consumo energético en tiempo real, ajusta tu ancho de banda y
+                                        recibe alertas inteligentes.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col gap-3">
+                                    <div class="flex items-center gap-3 text-text-secondary">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Monitoreo de producción solar en vivo</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-text-secondary">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Gestión de dispositivos conectados</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-text-secondary">
+                                        <span class="material-symbols-outlined text-primary">check_circle</span>
+                                        <span>Soporte técnico vía Chatbot IA</span>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-2 flex min-w-[84px] max-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-white text-background-dark hover:bg-gray-200 transition-colors text-sm font-bold leading-normal w-fit">
+                                    <span class="truncate">Descargar App</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-20">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1 text-center items-center gap-6">
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">¿Listo
+                        para
+                        modernizar tu hogar?</h2>
+                    <p class="text-lg text-slate-600 dark:text-text-secondary max-w-2xl">Únete a la revolución de la
+                        energía limpia y la conectividad ultra rápida. Solicita tu presupuesto personalizado hoy mismo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+                        <button
+                            class="glow-hover flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-slate-900 text-base font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
+                            <span class="truncate">Solicitar Presupuesto</span>
+                        </button>
+                        <button
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 border border-surface-border text-slate-900 dark:text-white hover:bg-surface-dark transition-colors text-base font-bold leading-normal tracking-[0.015em]">
+                            <span class="truncate">Contactar Soporte</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
+        <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+            <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2 text-white">
+                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-20">
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
+                            renovable.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Servicios</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Internet Fibra</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Energía Solar</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Domótica</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Integración IA</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Empresa</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Sobre Nosotros</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Contacto</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Novedades</h3>
+                        <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
+                            sostenible.</p>
+                        <div class="flex gap-2">
+                            <input
+                                class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
+                                placeholder="Tu email" type="email" />
+                            <button
+                                class="bg-primary text-background-dark rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
                             </button>
-
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="page-scroll" data-i18n="nav_home"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" data-i18n="nav_internet"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" data-i18n="nav_solar"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" data-i18n="nav_pricing"></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="main-btn login-btn" href="https://customer.dommatos.com"
-                                            style="padding: 0 20px; height: 40px; line-height: 36px; margin-right: 10px;">
-                                            <i class="lni lni-user" style="margin-right:5px;"></i> Clientes
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="main-btn login-btn" href="https://dashboard.dommatos.com"
-                                            style="padding: 0 20px; height: 40px; line-height: 36px; background: transparent; border-color: var(--dommatos-gray); color: var(--dommatos-gray);">
-                                            <i class="lni lni-cog" style="margin-right:5px;"></i> Admin
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div> <!-- navbar collapse -->
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- navbar area -->
-
-        <div id="home" class="header-hero bg_cover d-lg-flex align-items-center">
-
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-            <div class="shape shape-6"></div>
-
-            <div class="container">
-                <div class="row align-items-center justify-content-center justify-content-lg-between">
-                    <div class="col-lg-6 col-md-10">
-                        <div class="header-hero-content">
-                            <h1 class="header-title wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                                <span>Conecta tu hogar con energía solar y el mejor internet</span>
-                            </h1>
-                            <p class="text wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.6s">
-                                Descubre nuestras soluciones en paneles solares y planes de internet de alta velocidad.
-                                Tecnología sostenible y conectividad para tu hogar y empresa.
-                            </p>
-                        </div> <!-- header hero content -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-10">
-                        <div class="header-image">
-                            <img src="assets/images/header-app.png" alt="Dommatos app" class="image wow fadeInRightBig"
-                                data-wow-duration="1.3s" data-wow-delay="0.5s">
-                            <div class="image-shape wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.8s">
-
-                            </div>
-                        </div> <!-- header image -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-            <div class="header-shape-1"></div> <!-- header shape -->
-            <div class="header-shape-2">
-                <img src="assets/images/header-shape-2.svg" alt="shape">
-            </div> <!-- header shape -->
-        </div> <!-- header hero -->
-    </header>
-
-    <!--====== HEADER PART ENDS ======-->
-
-    <!--====== SOLAR PART START ======-->
-
-    <section id="solar" class="about-area pt-70 pb-120">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-image mt-50 wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <img class="app" src="assets/images/solar.png" alt="Paneles solares Dommatos">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <h3 class="title" data-i18n="solar_title"></h3>
-                            <p class="text" data-i18n="solar_desc"></p>
-                        </div>
-                        <a href="#contact" class="main-btn" data-i18n="solar_cta"></a>
+                <div
+                    class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Privacidad</span>
+                        </a>
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Términos</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!--====== SOLAR PART ENDS ======-->
-
-    <!--====== SERVICES PART START ======-->
-
-    <section id="why" class="services-area pt-110 pb-120">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="section-title text-center pb-25">
-                        <h3 class="title" data-i18n="why_title"></h3>
-                        <p class="text" data-i18n="why_subtitle"></p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services services-color-1 text-center mt-30 wow fadeInUpBig"
-                        data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <div class="services-icon d-flex align-items-center justify-content-center">
-                            <i class="lni lni-signal"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">Internet de Alta Velocidad</a></h4>
-                            <p class="text">Conexión estable y rápida para tu hogar o empresa. Planes adaptados a tus
-                                necesidades de navegación.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services services-color-2 text-center mt-30 wow fadeInUpBig"
-                        data-wow-duration="1.3s" data-wow-delay="0.4s">
-                        <div class="services-icon d-flex align-items-center justify-content-center">
-                            <i class="lni lni-sun"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">Paneles Solares</a></h4>
-                            <p class="text">Energía sostenible y ahorro en tu factura. Instalación y mantenimiento de
-                                sistemas fotovoltaicos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services services-color-3 text-center mt-30 wow fadeInUpBig"
-                        data-wow-duration="1.3s" data-wow-delay="0.6s">
-                        <div class="services-icon d-flex align-items-center justify-content-center">
-                            <i class="lni lni-cart-full"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">e-Commerce</a></h4>
-                            <p class="text">Implementación completa de tiendas virtuales. Gestión de inventarios, pagos
-                                y envíos para tu negocio.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services services-color-4 text-center mt-30 wow fadeInUpBig"
-                        data-wow-duration="1.3s" data-wow-delay="0.8s">
-                        <div class="services-icon d-flex align-items-center justify-content-center">
-                            <i class="lni lni-comments"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">Chatbots Inteligentes</a></h4>
-                            <p class="text">Automatiza la atención al cliente con asistentes virtuales que responden
-                                24/7 a tus usuarios.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services services-color-1 text-center mt-30 wow fadeInUpBig"
-                        data-wow-duration="1.3s" data-wow-delay="1s">
-                        <div class="services-icon d-flex align-items-center justify-content-center">
-                            <i class="lni lni-cog"></i>
-                        </div>
-                        <div class="services-content">
-                            <h4 class="services-title"><a href="#">Personalización Empresarial</a></h4>
-                            <p class="text">Soluciones tecnológicas a medida. Desarrollo de software y automatización de
-                                procesos específicos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== SERVICES PART ENDS ======-->
-
-    <!--====== ABOUT PART START ======-->
-
-    <section id="about" class="about-area pt-70 pb-120">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-image mt-50 wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="about-shape"></div>
-                        <img class="app" src="assets/images/about-app.png" alt="Dommatos app">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="section-title">
-                            <h3 class="title" data-i18n="about_title"></h3>
-                            <p class="text" data-i18n="about_desc"></p>
-                        </div>
-                        <a href="#download" class="main-btn" data-i18n="about_cta"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== ABOUT PART ENDS ======-->
-
-
-
-    <!--====== DOWNLOAD PART START ======-->
-
-    <section id="download" class="download-area pt-70 pb-40">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-6 col-md-9">
-                    <div class="download-image mt-50 wow fadeInRightBig" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <img class="image" src="assets/images/download-app.png" alt="download">
-                        <div class="download-shape-1"></div>
-                        <div class="download-shape-2">
-                            <img class="svg" src="assets/images/download-shape.svg" alt="shape">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="download-content mt-45 wow fadeInLeftBig" data-wow-duration="1.3s"
-                        data-wow-delay="0.5s">
-                        <h3 class="download-title" data-i18n="download_title"></h3>
-                        <p class="text" data-i18n="download_desc"></p>
-                        <ul>
-                            <li><a class="app-store" href="#"><img src="assets/images/app-store.png" alt="store"></a>
-                            </li>
-                            <li><a class="play-store" href="#"><img src="assets/images/play-store.png" alt="store"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== DOWNLOAD PART ENDS ======-->
-
-    <!--====== PART START FOOTER ======-->
-
-    <footer id="footer" class="footer-area">
-
-        <div class="footer-shape shape-1"></div>
-        <div class="footer-shape shape-2"></div>
-        <div class="footer-shape shape-3"></div>
-        <div class="footer-shape shape-4"></div>
-        <div class="footer-shape shape-5"></div>
-        <div class="footer-shape shape-6"></div>
-        <div class="footer-shape shape-7"></div>
-        <div class="footer-shape shape-8">
-            <img class="svg" src="assets/images/footer-shape.svg" alt="Shape">
-        </div>
-
-        <div class="footer-widget pt-30 pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                            <a class="logo" href="#">
-                                <img src="assets/images/logo.png" alt="Logo Dommatos">
-                            </a>
-                            <p class="text" data-i18n="footer_about"></p>
-                            <ul class="social">
-                                <li><a href="#"><i class="lni lni-facebook"></i></a></li>
-                                <li><a href="#"><i class="lni lni-twitter"></i></a></li>
-                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
-                                <li><a href="#"><i class="lni lni-linkedin"></i></a></li>
-                                <li><a href="https://wa.me/573241625788?text=Hola,%20Me%20interesa%20conocer%20mas%20.."
-                                        target="_blank" rel="noopener" title="WhatsApp"><i
-                                            class="lni lni-whatsapp"></i></a></li>
-                            </ul>
-                        </div> <!-- footer about -->
-                    </div>
-                    <div class="col-lg-5 col-md-6">
-                        <div class="footer-link d-flex flex-wrap">
-                            <div class="footer-link-wrapper mt-45 wow fadeIn" data-wow-duration="1.3s"
-                                data-wow-delay="0.4s">
-                                <div class="footer-title">
-                                    <h4 class="title">Quick Links</h4>
-                                </div>
-                                <ul class="link">
-                                    <li><a class="" href="#">Home</a></li>
-                                    <li><a class="" href="#">Features</a></li>
-                                    <li><a class="" href="#">Testimonial</a></li>
-                                    <li><a class="" href="#">Pricing</a></li>
-                                    <li><a class="" href="#">Contact</a></li>
-                                </ul>
-                            </div> <!-- footer link wrapper -->
-
-                            <div class="footer-link-wrapper mt-45 wow fadeIn" data-wow-duration="1.3s"
-                                data-wow-delay="0.6s">
-                                <div class="footer-title">
-                                    <h4 class="title">Support</h4>
-                                </div>
-                                <ul class="link">
-                                    <li style="display:none;"><a class="" href="#terms" data-i18n="footer_terms"></a>
-                                    </li>
-                                    <li><a class="" href="#">FAQ</a></li>
-                                    <li><a class="" href="#">Privacy Policy</a></li>
-                                    <li><a class="" href="#">Terms Of Use</a></li>
-                                    <li><a class="" href="#">Legal</a></li>
-                                    <li><a class="" href="#">Site Map</a></li>
-                                </ul>
-                            </div> <!-- footer link wrapper -->
-                        </div> <!-- footer link -->
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-contact mt-45 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                            <div class="footer-title">
-                                <h4 class="title" data-i18n="footer_contact_title"></h4>
-                            </div>
-                            <ul class="contact-list">
-                                <li>
-                                    <div class="contact-info d-flex">
-                                        <div class="info-content media-body">
-                                            <p class="text"><i class="lni lni-envelope"></i> <a
-                                                    href="mailto:dommatos.sas@gmail.com" data-i18n="footer_email"></a>
-                                            </p>
-                                        </div>
-                                    </div> <!-- contact info -->
-                                </li>
-                                <li>
-                                    <div class="contact-info d-flex">
-                                        <div class="info-content media-body">
-                                            <p class="text"><i class="lni lni-world"></i> <a href="https://dommatos.com"
-                                                    target="_blank" rel="noopener" data-i18n="footer_web"></a></p>
-                                        </div>
-                                    </div> <!-- contact info -->
-                                </li>
-                                <li>
-                                    <div class="contact-info d-flex">
-                                        <div class="info-content media-body">
-                                            <p class="text"><i class="lni lni-whatsapp"></i> <a
-                                                    href="https://wa.me/573241625788?text=Hola,%20Me%20interesa%20conocer%20mas%20.."
-                                                    target="_blank" rel="noopener" data-i18n="footer_whatsapp"></a></p>
-                                        </div>
-                                    </div> <!-- contact info -->
-                                </li>
-                            </ul> <!-- contact list -->
-                        </div> <!-- footer contact -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- footer widget -->
-
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright d-sm-flex justify-content-between">
-                            <div class="copyright-text text-center">
-                                <p class="text">Copyright © 2022 Dommatos SAS Operating Company, SAS. Todos los derechos
-                                    reservados. </p>
-                            </div> <!-- copyright text -->
-
-                            <div class="copyright-privacy text-center">
-                                <a href="terms.html?origin=dommatos">Dommatos SAS</a>
-                            </div> <!-- copyright privacy -->
-                        </div> <!-- copyright -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- footer copyright -->
     </footer>
 
-    <!--====== PART FOOTER ENDS ======-->
-
-    <!--====== BACK TOP TOP PART START ======-->
-
-    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
-
-    <!--====== BACK TOP TOP PART ENDS ======-->
-
-    <!--====== PART START ======-->
-
-    <!--
-    <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-"></div> 
-            </div>
-        </div>
-    </section>
--->
-
-    <!--====== PART ENDS ======-->
-
-
-
-
-
-    <!--====== Jquery js ======-->
-    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-
-    <!--====== Bootstrap js ======-->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-
-    <!--====== WOW js ======-->
-    <script src="assets/js/wow.min.js"></script>
-
-
-    <!--====== Scrolling Nav js ======-->
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
-
-    <!--====== Main js ======-->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>
