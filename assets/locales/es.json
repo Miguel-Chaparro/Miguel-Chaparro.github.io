@@ -1,0 +1,14 @@
+{
+    "header": {
+        "nav": {
+            "internet": "Internet",
+            "solar": "Energía Solar",
+            "services": "Servicios",
+            "about": "Nosotros"
+        },
+        "buttons": {
+            "clients": "Clientes",
+            "admin": "Admin"
+        }
+    }
+}

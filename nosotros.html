@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Nosotros | Dommatos - Transformando tu Entorno</title>
+    <meta name="description"
+        content="Conoce más sobre Dommatos. Expertos en internet de alta velocidad, energía solar y domótica avanzada. Estamos aquí para diseñar el futuro de tu hogar o empresa.">
+    <meta name="keywords"
+        content="Nosotros, Dommatos, contacto, cotización, internet, energía solar, domótica, tecnología, Bogotá, Colombia">
+    <meta name="author" content="Dommatos SAS">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Nosotros | Dommatos - Transformando tu Entorno">
+    <meta property="og:description"
+        content="Conoce más sobre Dommatos. Expertos en internet de alta velocidad, energía solar y domótica avanzada. Estamos aquí para diseñar el futuro de tu hogar o empresa.">
+    <meta property="og:image" content="https://dommatos.com/assets/images/favicon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Dommatos Logo">
+    <meta property="og:image:secure_url" content="https://dommatos.com/assets/images/logo.png">
+    <meta property="og:site_name" content="Dommatos">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dommatos.com/nosotros.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://dommatos.com/assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="facebook-domain-verification" content="a54x8621ycuymwdzc2x9zo8xlrzzj2" />
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        // Apply Tailwind Config
+        tailwind.config = window.tailwindConfig || tailwind.config;
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-secondary-text dark:text-gray-100 min-h-screen flex flex-col transition-colors duration-300 animate-page-enter">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
+        <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
+            <div class="flex items-center gap-3 pr-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="internet.html" data-i18n="header.nav.internet">Internet</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+                    <a class="text-primary hover:scale-105 transition-all text-sm font-bold leading-normal inline-block"
+                        href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-dark transition-colors text-white font-bold text-xs"
+                        id="lang-toggle">
+                        <span id="lang-toggle-text">ES</span>
+                    </button>
+                    <a href="https://customer.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                        <span class="truncate" data-i18n="header.buttons.clients">Clientes</span>
+                    </a>
+                    <a href="https://dashboard.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
+                        <span class="truncate" data-i18n="header.buttons.admin">Admin</span>
+                    </a>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-secondary-text dark:text-white z-50 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden animate-fade-in">
+        <nav class="flex flex-col gap-6 text-xl">
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="internet.html" data-i18n="header.nav.internet">Internet</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="https://customer.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg bg-primary text-slate-900 font-bold shadow-lg shadow-primary/20">
+                    <span data-i18n="header.buttons.clients">Clientes</span>
+                </a>
+                <a href="https://dashboard.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg border border-surface-border text-white font-bold hover:bg-surface-dark transition-colors">
+                    <span data-i18n="header.buttons.admin">Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4 md:px-10 lg:px-40">
+        <div class="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <div class="lg:col-span-5 flex flex-col justify-center space-y-10">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wide w-fit">
+                        <span class="material-symbols-outlined text-sm">bolt</span>
+                        Soluciones Inteligentes
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-dark-text dark:text-white">
+                        Transforma tu <span class="text-primary">Entorno</span> con Dommatos
+                    </h1>
+                    <p class="text-secondary-text dark:text-gray-300 text-lg font-light leading-relaxed max-w-md">
+                        Desde internet de alta velocidad hasta sistemas de energía solar y domótica avanzada. Diseñamos
+                        el futuro de tu hogar o empresa.
+                    </p>
+                </div>
+                <div class="space-y-6 pt-4 border-t border-gray-200 dark:border-[#4a4a4d]">
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-white dark:bg-surface-dark flex items-center justify-center border border-gray-200 dark:border-[#575759] group-hover:border-primary transition-colors text-primary shadow-sm">
+                            <span class="material-symbols-outlined">call</span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs text-secondary-text dark:text-gray-400 font-medium uppercase tracking-wider">
+                                Llámanos</p>
+                            <p class="text-lg font-bold text-dark-text dark:text-white">+57 324 162 5788</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-white dark:bg-surface-dark flex items-center justify-center border border-gray-200 dark:border-[#575759] group-hover:border-primary transition-colors text-primary shadow-sm">
+                            <span class="material-symbols-outlined">mail</span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs text-secondary-text dark:text-gray-400 font-medium uppercase tracking-wider">
+                                Escríbenos</p>
+                            <p class="text-lg font-bold text-dark-text dark:text-white">dommatos.sas@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-white dark:bg-surface-dark flex items-center justify-center border border-gray-200 dark:border-[#575759] group-hover:border-primary transition-colors text-primary shadow-sm">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs text-secondary-text dark:text-gray-400 font-medium uppercase tracking-wider">
+                                Visítanos</p>
+                            <p class="text-lg font-bold text-dark-text dark:text-white">Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="hidden lg:block h-32 w-full rounded-xl overflow-hidden relative opacity-60 hover:opacity-100 transition-opacity bg-gray-200 dark:bg-[#404043]">
+                    <img alt="Stylized map showing bogota location"
+                        class="w-full h-full object-cover grayscale mix-blend-multiply dark:mix-blend-normal opacity-80"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIsnW_WOVHqttKwmT2KRttfromkopAQLNb0LxrZ035LgEr76YxvEfcdjs-Ppjn5LSCTXrSPu1rwXHFcyHY_JBMuVsakBMol4fogjoaHE_LmTBnaLImmE82vnlogHBbdF-upv34ghCyLrlfews0OUXychWwrJP1Q8wTDXdani_9EZ_Km8D4PmGMvF_x2uKgx4CpBBezh8IfbgFhTR4CchqeaLX00jI4zSjSf-1yoY6zHDZssAsuyd4P5d5Dkqw1mEVeNGKPQLHiMC3b" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-background-light dark:from-background-dark to-transparent">
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7">
+                <div
+                    class="bg-white dark:bg-surface-dark border border-gray-200 dark:border-[#575759] rounded-2xl p-6 md:p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_-12px_rgba(253,185,22,0.1)] relative overflow-hidden">
+                    <div
+                        class="absolute -top-20 -right-20 size-60 bg-primary/10 blur-[80px] rounded-full pointer-events-none">
+                    </div>
+                    <div class="relative z-10 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-2 text-dark-text dark:text-white">Configura tu Proyecto
+                            </h2>
+                            <p class="text-secondary-text dark:text-gray-300 text-sm">Completa el formulario para
+                                recibir una propuesta a medida en menos de 24 horas.</p>
+                        </div>
+                        <form class="space-y-6">
+                            <div class="space-y-3">
+                                <label class="text-sm font-medium text-secondary-text dark:text-gray-300 block">¿Qué
+                                    servicio te interesa?</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label class="group cursor-pointer relative">
+                                        <input checked="" class="peer sr-only" name="service" type="radio"
+                                            value="internet" />
+                                        <div
+                                            class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-[#575759] bg-gray-50 dark:bg-background-dark/50 hover:bg-gray-100 dark:hover:bg-background-dark text-secondary-text dark:text-gray-300 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-dark-text dark:peer-checked:text-white transition-all">
+                                            <span class="material-symbols-outlined text-primary">wifi</span>
+                                            <span class="text-sm font-medium">Internet Veloz</span>
+                                        </div>
+                                    </label>
+                                    <label class="group cursor-pointer relative">
+                                        <input class="peer sr-only" name="service" type="radio" value="solar" />
+                                        <div
+                                            class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-[#575759] bg-gray-50 dark:bg-background-dark/50 hover:bg-gray-100 dark:hover:bg-background-dark text-secondary-text dark:text-gray-300 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-dark-text dark:peer-checked:text-white transition-all">
+                                            <span class="material-symbols-outlined text-primary">solar_power</span>
+                                            <span class="text-sm font-medium">Energía Solar</span>
+                                        </div>
+                                    </label>
+                                    <label class="group cursor-pointer relative">
+                                        <input class="peer sr-only" name="service" type="radio" value="chatbot" />
+                                        <div
+                                            class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-[#575759] bg-gray-50 dark:bg-background-dark/50 hover:bg-gray-100 dark:hover:bg-background-dark text-secondary-text dark:text-gray-300 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-dark-text dark:peer-checked:text-white transition-all">
+                                            <span class="material-symbols-outlined text-primary">smart_toy</span>
+                                            <span class="text-sm font-medium">Chatbot AI</span>
+                                        </div>
+                                    </label>
+                                    <label class="group cursor-pointer relative">
+                                        <input class="peer sr-only" name="service" type="radio" value="domotica" />
+                                        <div
+                                            class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-[#575759] bg-gray-50 dark:bg-background-dark/50 hover:bg-gray-100 dark:hover:bg-background-dark text-secondary-text dark:text-gray-300 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-dark-text dark:peer-checked:text-white transition-all">
+                                            <span class="material-symbols-outlined text-primary">home_iot_device</span>
+                                            <span class="text-sm font-medium">Domótica a Medida</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label
+                                        class="text-xs font-bold uppercase text-secondary-text dark:text-gray-400 tracking-wider ml-1"
+                                        for="name">Nombre</label>
+                                    <input
+                                        class="w-full bg-gray-50 dark:bg-background-dark/80 border border-gray-200 dark:border-[#575759] text-dark-text dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none block p-3 placeholder-gray-400 dark:placeholder-gray-600 transition-all"
+                                        id="name" placeholder="Tu nombre completo" type="text" />
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label
+                                        class="text-xs font-bold uppercase text-secondary-text dark:text-gray-400 tracking-wider ml-1"
+                                        for="company">Empresa (Opcional)</label>
+                                    <input
+                                        class="w-full bg-gray-50 dark:bg-background-dark/80 border border-gray-200 dark:border-[#575759] text-dark-text dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none block p-3 placeholder-gray-400 dark:placeholder-gray-600 transition-all"
+                                        id="company" placeholder="Nombre de tu organización" type="text" />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-1.5">
+                                    <label
+                                        class="text-xs font-bold uppercase text-secondary-text dark:text-gray-400 tracking-wider ml-1"
+                                        for="email">Correo Electrónico</label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 material-symbols-outlined text-lg">alternate_email</span>
+                                        <input
+                                            class="w-full bg-gray-50 dark:bg-background-dark/80 border border-gray-200 dark:border-[#575759] text-dark-text dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none block pl-10 p-3 placeholder-gray-400 dark:placeholder-gray-600 transition-all"
+                                            id="email" placeholder="ejemplo@correo.com" type="email" />
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label
+                                        class="text-xs font-bold uppercase text-secondary-text dark:text-gray-400 tracking-wider ml-1"
+                                        for="phone">Teléfono</label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400 material-symbols-outlined text-lg">smartphone</span>
+                                        <input
+                                            class="w-full bg-gray-50 dark:bg-background-dark/80 border border-gray-200 dark:border-[#575759] text-dark-text dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none block pl-10 p-3 placeholder-gray-400 dark:placeholder-gray-600 transition-all"
+                                            id="phone" placeholder="+52 (55) 0000 0000" type="tel" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-1.5">
+                                <label
+                                    class="text-xs font-bold uppercase text-secondary-text dark:text-gray-400 tracking-wider ml-1"
+                                    for="message">Detalles del Proyecto</label>
+                                <textarea
+                                    class="w-full bg-gray-50 dark:bg-background-dark/80 border border-gray-200 dark:border-[#575759] text-dark-text dark:text-white text-sm rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none block p-3 placeholder-gray-400 dark:placeholder-gray-600 transition-all"
+                                    id="message" placeholder="Cuéntanos más sobre lo que necesitas..."
+                                    rows="4"></textarea>
+                            </div>
+                            <div class="pt-2">
+                                <button
+                                    class="w-full flex justify-center items-center gap-2 bg-primary hover:bg-[#e5a612] text-slate-900 font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-[1.01] shadow-lg shadow-primary/30"
+                                    type="submit">
+                                    <span>Solicitar Cotización</span>
+                                    <span class="material-symbols-outlined">send</span>
+                                </button>
+                                <p
+                                    class="text-center text-xs text-gray-400 dark:text-gray-500 mt-4 flex items-center justify-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">lock</span>
+                                    Tus datos están protegidos por nuestra política de privacidad.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
+        <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+            <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2 text-white">
+                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
+                            renovable.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Servicios</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
+                            Fibra</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía Solar</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
+                            IA</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Empresa</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
+                            Nosotros</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Novedades</h3>
+                        <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
+                            sostenible.</p>
+                        <div class="flex gap-2">
+                            <input
+                                class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
+                                placeholder="Tu email" type="email" />
+                            <button
+                                class="bg-primary text-slate-900 rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Privacidad</span>
+                        </a>
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Términos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

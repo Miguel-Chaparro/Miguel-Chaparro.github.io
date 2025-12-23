@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Energía Solar | Dommatos - Soluciones Sostenibles e Inteligentes</title>
+    <meta name="description"
+        content="Reduce tu factura eléctrica hasta un 90% con los sistemas de energía solar de Dommatos. Instalación profesional, monitoreo IA y garantía de por vida.">
+    <meta name="keywords"
+        content="Energía solar, paneles solares, ahorro energético, sostenibilidad, smart home, Dommatos, kits solares, independencia energética">
+    <meta name="author" content="Dommatos SAS">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Energía Solar | Dommatos - Soluciones Sostenibles e Inteligentes">
+    <meta property="og:description"
+        content="Reduce tu factura eléctrica hasta un 90% con los sistemas de energía solar de Dommatos. Instalación profesional, monitoreo IA y garantía de por vida.">
+    <meta property="og:image" content="https://dommatos.com/assets/images/favicon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="Dommatos Logo">
+    <meta property="og:image:secure_url" content="https://dommatos.com/assets/images/logo.png">
+    <meta property="og:site_name" content="Dommatos">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dommatos.com/solar.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://dommatos.com/assets/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="facebook-domain-verification" content="a54x8621ycuymwdzc2x9zo8xlrzzj2" />
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        // Apply Tailwind Config
+        tailwind.config = window.tailwindConfig || tailwind.config;
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300 animate-page-enter">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
+        <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
+            <div class="flex items-center gap-3 pr-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="internet.html" data-i18n="header.nav.internet">Internet</a>
+                    <a class="text-primary hover:scale-105 transition-all text-sm font-bold leading-normal inline-block"
+                        href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-dark transition-colors text-white font-bold text-xs"
+                        id="lang-toggle">
+                        <span id="lang-toggle-text">ES</span>
+                    </button>
+                    <a href="https://customer.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                        <span class="truncate" data-i18n="header.buttons.clients">Clientes</span>
+                    </a>
+                    <a href="https://dashboard.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
+                        <span class="truncate" data-i18n="header.buttons.admin">Admin</span>
+                    </a>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-secondary-text dark:text-white z-50 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden animate-fade-in">
+        <nav class="flex flex-col gap-6 text-xl">
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="internet.html" data-i18n="header.nav.internet">Internet</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="https://customer.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg bg-primary text-slate-900 font-bold shadow-lg shadow-primary/20">
+                    <span data-i18n="header.buttons.clients">Clientes</span>
+                </a>
+                <a href="https://dashboard.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg border border-surface-border text-white font-bold hover:bg-surface-dark transition-colors">
+                    <span data-i18n="header.buttons.admin">Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <main class="flex-grow pt-0">
+        <section class="relative min-h-[600px] flex items-center justify-center px-4 md:px-10 lg:px-40 py-12">
+            <div class="absolute inset-0 z-0">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/90 to-transparent z-10">
+                </div>
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBozfcLevorJ7gjlRMe3D6_msbIIBaoc_LfL6EOCm8UQ1XpOnHZx8zz2xe5PrjhbY4_TZ65emSCAEq58crpGrZ2rwQxiCw7m5MVXCd9hGiZj5cFn3C1gFthA4HjBzMc_eXehnRJ_lHKqDybdfbMKZL73dmcrpvp2HQH3sEUpsvylJuT5kA7Po_LMnKitGrO3BKOZtjt_Ip1JvWJa0Lcy3chhJN-czVH_9y8nmnHpjFA0sr1-jXfq_r5bjBupYQeu9Hvy1YmTruTQYJt");'>
+                </div>
+            </div>
+            <div class="relative z-10 w-full max-w-[1200px]">
+                <div class="max-w-[640px] flex flex-col gap-6">
+                    <h1 class="text-white text-4xl md:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
+                        Energiza tu Hogar con <span class="text-primary">Inteligencia</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg font-normal leading-relaxed">
+                        Soluciones de energía sostenible diseñadas a medida por Dommatos. Reduce tu factura eléctrica,
+                        obtén independencia energética y controla todo desde nuestra app inteligente.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                        <a class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-yellow-400 text-slate-900 text-base font-bold transition-all shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:shadow-[0_0_30px_rgba(253,185,22,0.5)]"
+                            href="#calculator">
+                            Calcular Ahorro
+                        </a>
+                        <a class="flex items-center justify-center rounded-lg h-12 px-8 border border-surface-border bg-surface-dark/50 hover:bg-surface-dark text-white text-base font-medium backdrop-blur-sm transition-all"
+                            href="#process">
+                            Ver Proceso
+                        </a>
+                    </div>
+                    <div class="flex gap-8 mt-8 pt-8 border-t border-surface-border/50">
+                        <div>
+                            <p class="text-3xl font-bold text-white">90%</p>
+                            <p class="text-text-secondary text-sm">Ahorro Promedio</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">25+</p>
+                            <p class="text-text-secondary text-sm">Años de Garantía</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-white">24/7</p>
+                            <p class="text-text-secondary text-sm">Monitoreo IA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 md:px-10 lg:px-40 bg-background-dark" id="features">
+            <div class="max-w-[1200px] mx-auto flex flex-col gap-10">
+                <div class="flex flex-col gap-4 text-center md:text-left">
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm">¿Por qué Dommatos?</span>
+                    <h2 class="text-white text-3xl md:text-4xl font-bold leading-tight max-w-[720px]">
+                        Más que paneles solares, un ecosistema energético.
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-8 hover:border-primary/50 transition-colors">
+                        <div
+                            class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">currency_exchange</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Retorno de Inversión</h3>
+                        <p class="text-text-secondary text-base leading-relaxed">
+                            Recupera tu inversión en tiempo récord. Reduce tu factura eléctrica hasta en un 90% desde el
+                            primer mes de operación.
+                        </p>
+                    </div>
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-8 hover:border-primary/50 transition-colors">
+                        <div
+                            class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">eco</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Energía 100% Limpia</h3>
+                        <p class="text-text-secondary text-base leading-relaxed">
+                            Disminuye drásticamente tu huella de carbono. Energía renovable e inagotable directamente
+                            del sol a tu hogar.
+                        </p>
+                    </div>
+                    <div
+                        class="group flex flex-col gap-4 rounded-xl border border-surface-border bg-surface-dark p-8 hover:border-primary/50 transition-colors">
+                        <div
+                            class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">smart_toy</span>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Integración IA</h3>
+                        <p class="text-text-secondary text-base leading-relaxed">
+                            Monitorea producción y consumo con nuestro Chatbot exclusivo. Integración total con sistemas
+                            de domótica Dommatos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 md:px-10 lg:px-40 bg-surface-dark" id="process">
+            <div class="max-w-[960px] mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm">El camino al sol</span>
+                    <h2 class="text-white text-3xl md:text-4xl font-bold mt-2">Instalación sin complicaciones</h2>
+                </div>
+                <div class="relative">
+                    <div class="absolute left-[19px] top-0 bottom-0 w-[2px] bg-surface-border md:left-1/2 md:-ml-[1px]">
+                    </div>
+                    <div
+                        class="relative flex flex-col md:flex-row gap-8 mb-12 md:justify-between items-start md:items-center group">
+                        <div class="md:w-[45%] md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Análisis
+                                del Sitio</h3>
+                            <p class="text-text-secondary mt-2">Nuestros expertos evalúan tu techo y consumo energético
+                                para dimensionar el sistema perfecto.</p>
+                            <span
+                                class="inline-block mt-2 text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">Día
+                                1</span>
+                        </div>
+                        <div
+                            class="absolute left-0 top-0 md:static md:w-[60px] flex justify-center order-1 md:order-2 z-10">
+                            <div
+                                class="size-10 rounded-full bg-background-dark border-2 border-primary flex items-center justify-center text-white shadow-[0_0_15px_rgba(253,185,22,0.3)]">
+                                <span class="material-symbols-outlined text-lg">design_services</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%] order-3"></div>
+                    </div>
+                    <div
+                        class="relative flex flex-col md:flex-row gap-8 mb-12 md:justify-between items-start md:items-center group">
+                        <div class="hidden md:block md:w-[45%] order-1"></div>
+                        <div
+                            class="absolute left-0 top-0 md:static md:w-[60px] flex justify-center order-1 md:order-2 z-10">
+                            <div
+                                class="size-10 rounded-full bg-background-dark border-2 border-surface-border group-hover:border-primary flex items-center justify-center text-text-secondary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">engineering</span>
+                            </div>
+                        </div>
+                        <div class="md:w-[45%] order-2 md:order-3 pl-12 md:pl-0">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Diseño e
+                                Ingeniería</h3>
+                            <p class="text-text-secondary mt-2">Creamos un plano a medida y gestionamos todos los
+                                permisos necesarios con la compañía eléctrica.</p>
+                            <span
+                                class="inline-block mt-2 text-xs font-mono text-text-secondary bg-background-dark px-2 py-1 rounded border border-surface-border">Día
+                                3-5</span>
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex flex-col md:flex-row gap-8 mb-12 md:justify-between items-start md:items-center group">
+                        <div class="md:w-[45%] md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                Instalación Profesional</h3>
+                            <p class="text-text-secondary mt-2">Técnicos certificados instalan tus paneles en un solo
+                                día, asegurando la máxima eficiencia y seguridad.</p>
+                            <span
+                                class="inline-block mt-2 text-xs font-mono text-text-secondary bg-background-dark px-2 py-1 rounded border border-surface-border">Día
+                                10</span>
+                        </div>
+                        <div
+                            class="absolute left-0 top-0 md:static md:w-[60px] flex justify-center order-1 md:order-2 z-10">
+                            <div
+                                class="size-10 rounded-full bg-background-dark border-2 border-surface-border group-hover:border-primary flex items-center justify-center text-text-secondary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">solar_power</span>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%] order-3"></div>
+                    </div>
+                    <div
+                        class="relative flex flex-col md:flex-row gap-8 md:justify-between items-start md:items-center group">
+                        <div class="hidden md:block md:w-[45%] order-1"></div>
+                        <div
+                            class="absolute left-0 top-0 md:static md:w-[60px] flex justify-center order-1 md:order-2 z-10">
+                            <div
+                                class="size-10 rounded-full bg-background-dark border-2 border-surface-border group-hover:border-primary flex items-center justify-center text-text-secondary group-hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-lg">smartphone</span>
+                            </div>
+                        </div>
+                        <div class="md:w-[45%] order-2 md:order-3 pl-12 md:pl-0">
+                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                                Activación y App</h3>
+                            <p class="text-text-secondary mt-2">Encendemos el sistema y te damos acceso a la app
+                                Dommatos para ver tus ahorros en tiempo real.</p>
+                            <span
+                                class="inline-block mt-2 text-xs font-mono text-text-secondary bg-background-dark px-2 py-1 rounded border border-surface-border">Continuo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 md:px-10 lg:px-40 bg-background-dark relative overflow-hidden" id="calculator">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px] pointer-events-none"></div>
+            <div
+                class="max-w-[1000px] mx-auto glass-panel border border-surface-border rounded-2xl p-8 md:p-12 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col gap-6">
+                        <div>
+                            <span class="text-primary font-bold uppercase text-xs tracking-wider">Calculadora de
+                                Ahorro</span>
+                            <h2 class="text-3xl font-bold text-white mt-2 mb-4">Descubre cuánto puedes ahorrar</h2>
+                            <p class="text-text-secondary">Desliza para indicar tu factura mensual de electricidad
+                                promedio.</p>
+                        </div>
+                        <div class="space-y-6 pt-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <label class="text-sm font-medium text-white">Factura Mensual Actual</label>
+                                    <span class="text-xl font-bold text-primary">$<span
+                                            id="bill-amount">150</span></span>
+                                </div>
+                                <input
+                                    class="w-full h-2 bg-surface-border rounded-lg appearance-none cursor-pointer accent-primary"
+                                    id="bill-slider" max="500" min="50"
+                                    oninput="document.getElementById('bill-amount').innerText = this.value; document.getElementById('savings-amount').innerText = Math.round(this.value * 12 * 0.9).toLocaleString();"
+                                    type="range" value="150" />
+                                <div class="flex justify-between mt-1 text-xs text-text-secondary">
+                                    <span>$50</span>
+                                    <span>$500+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-background-dark/80 rounded-xl p-8 border border-surface-border flex flex-col items-center text-center gap-4 shadow-xl">
+                        <span class="material-symbols-outlined text-5xl text-primary">savings</span>
+                        <div>
+                            <p class="text-text-secondary text-sm font-medium uppercase tracking-wider mb-1">Ahorro
+                                Estimado Anual</p>
+                            <p class="text-5xl font-black text-white tracking-tight">$<span
+                                    id="savings-amount">1,620</span></p>
+                        </div>
+                        <p class="text-xs text-text-secondary max-w-[280px]">
+                            *Estimación basada en un ahorro del 90% con condiciones solares óptimas.
+                        </p>
+                        <button
+                            class="glow-hover mt-4 w-full py-3 px-6 bg-primary hover:bg-yellow-400 text-slate-900 font-bold rounded-lg transition-colors">
+                            Solicitar Estudio Gratuito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 md:px-10 lg:px-40 bg-surface-dark" id="pricing">
+            <div class="max-w-[1200px] mx-auto flex flex-col gap-12">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Planes Flexibles</h2>
+                    <p class="text-text-secondary mt-4 max-w-2xl mx-auto">Elige el kit que mejor se adapte a tus
+                        necesidades energéticas. Todos incluyen instalación y garantía.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="flex flex-col gap-6 rounded-2xl border border-surface-border bg-background-dark p-8 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-white text-xl font-bold">Kit Básico</h3>
+                                <span
+                                    class="bg-surface-border text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Inicio</span>
+                            </div>
+                            <div class="flex items-baseline gap-1 text-white">
+                                <span class="text-4xl font-black tracking-tight">$2,500</span>
+                            </div>
+                            <p class="text-text-secondary text-sm mt-2">Ideal para hogares pequeños o bajo consumo.</p>
+                        </div>
+                        <div class="h-px bg-surface-border w-full"></div>
+                        <ul class="flex flex-col gap-3 flex-1">
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                4 Paneles Solares Monocristalinos
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Inversor Central 2kW
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Instalación Estándar
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                App de Monitoreo Básico
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-slate-900 transition-colors">
+                            Ver Detalles
+                        </button>
+                    </div>
+                    <div
+                        class="relative flex flex-col gap-6 rounded-2xl border-2 border-primary bg-background-dark p-8 shadow-[0_0_30px_rgba(253,185,22,0.1)] transform md:scale-105 z-10">
+                        <div class="absolute top-0 right-0 left-0 flex justify-center -mt-3">
+                            <span
+                                class="bg-primary text-slate-900 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-lg">Más
+                                Popular</span>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-white text-xl font-bold">Kit Pro</h3>
+                            </div>
+                            <div class="flex items-baseline gap-1 text-white">
+                                <span class="text-4xl font-black tracking-tight">$6,800</span>
+                            </div>
+                            <p class="text-text-secondary text-sm mt-2">Independencia energética para familias.</p>
+                        </div>
+                        <div class="h-px bg-surface-border w-full"></div>
+                        <ul class="flex flex-col gap-3 flex-1">
+                            <li class="flex gap-3 text-sm text-white font-medium">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                10 Paneles Solares High-Efficiency
+                            </li>
+                            <li class="flex gap-3 text-sm text-white font-medium">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Batería de Respaldo 5kWh
+                            </li>
+                            <li class="flex gap-3 text-sm text-white font-medium">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Inversor Híbrido 5kW
+                            </li>
+                            <li class="flex gap-3 text-sm text-white font-medium">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Monitoreo Avanzado 24/7
+                            </li>
+                        </ul>
+                        <button
+                            class="glow-hover w-full py-3 rounded-lg bg-primary text-slate-900 font-bold hover:bg-yellow-400 transition-colors shadow-lg shadow-primary/20">
+                            Elegir Plan Pro
+                        </button>
+                    </div>
+                    <div
+                        class="flex flex-col gap-6 rounded-2xl border border-surface-border bg-background-dark p-8 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-white text-xl font-bold">Smart Home</h3>
+                                <span
+                                    class="bg-surface-border text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Premium</span>
+                            </div>
+                            <div class="flex items-baseline gap-1 text-white">
+                                <span class="text-4xl font-black tracking-tight">$9,500</span>
+                            </div>
+                            <p class="text-text-secondary text-sm mt-2">Ecosistema total con domótica integrada.</p>
+                        </div>
+                        <div class="h-px bg-surface-border w-full"></div>
+                        <ul class="flex flex-col gap-3 flex-1">
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                14 Paneles Solares Premium
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                2x Baterías de Alta Capacidad
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Hub Domótica Dommatos Incluido
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-300">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                Integración IA Chatbot &amp; Voz
+                            </li>
+                        </ul>
+                        <button
+                            class="w-full py-3 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-slate-900 transition-colors">
+                            Contactar Asesor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 md:px-10 lg:px-40 bg-background-dark border-t border-surface-border">
+            <div
+                class="max-w-[1200px] mx-auto rounded-3xl bg-gradient-to-br from-surface-dark to-background-dark border border-surface-border p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative">
+                <div
+                    class="absolute -right-20 -top-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none">
+                </div>
+                <div class="relative z-10 max-w-xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Listo para el cambio?</h2>
+                    <p class="text-text-secondary text-lg mb-8">
+                        Únete a las más de 500 familias que ya generan su propia energía con Dommatos. Agenda una visita
+                        técnica sin compromiso hoy mismo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="glow-hover flex items-center justify-center gap-2 h-12 px-8 bg-primary hover:bg-yellow-400 text-slate-900 text-base font-bold rounded-lg transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">calendar_month</span>
+                            Agendar Cita
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 h-12 px-8 border border-surface-border bg-transparent hover:bg-surface-dark text-white text-base font-medium rounded-lg transition-colors">
+                            <span class="material-symbols-outlined text-[24px]">chat</span>
+                            Hablar con IA
+                        </button>
+                    </div>
+                </div>
+                <div class="relative z-10 w-full md:w-auto flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 bg-primary/20 rounded-full animate-pulse blur-xl"></div>
+                        <img alt="Person checking solar stats on tablet"
+                            class="relative w-full h-full object-cover rounded-2xl border-2 border-surface-border shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBwi4V3XKVGBn0C6h0hMVU4o6d2KyNLR7oFiCW07xMr-166_sWXiZzAhUPEankskL3Z-oKeQ74Z8ZmYC63E9S-BNR6kpabQH5LZ9NxyzTf_hVQC7xGJrngr8H-CyJsL1QYwOMVNI-ByCGTF2zrCGkMjTcMzyopk8QO0Oh_DFuJRQuFkH_PExrpCFOhqavIFPB7N-4Rfs9RT-qY5qABe0wWlDsYCZ3LL2pvQxsd2GjjrC1_BPiri0WWhymtdHy96ffoqkDA7JCFeGwv" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
+        <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+            <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2 text-white">
+                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
+                            renovable.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Servicios</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
+                            Fibra</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía Solar</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
+                            IA</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Empresa</h3>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
+                            Nosotros</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-white font-bold">Novedades</h3>
+                        <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
+                            sostenible.</p>
+                        <div class="flex gap-2">
+                            <input
+                                class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
+                                placeholder="Tu email" type="email" />
+                            <button
+                                class="bg-primary text-slate-900 rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                    <div class="flex gap-6">
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Privacidad</span>
+                        </a>
+                        <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                            <span class="text-sm">Términos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button
+        class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-slate-900 shadow-lg shadow-primary/40 hover:scale-110 hover:bg-white transition-all">
+        <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
+    </button>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

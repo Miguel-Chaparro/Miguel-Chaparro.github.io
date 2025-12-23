@@ -40,37 +40,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#fdb916", "background-light": "#f6f8f6",
-                        "background-dark": "#575759", "surface-dark": "#464648", "surface-border": "#717173", "text-secondary": "#e4e4e7"
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"],
-                        "body": ["Space Grotesk", "sans-serif"],
-                    },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
-        }
+        // Apply Tailwind Config
+        tailwind.config = window.tailwindConfig || tailwind.config;
     </script>
-    <style>
-        body {
-            font-family: "Space Grotesk", sans-serif;
-        }
-
-        .glow-hover:hover {
-            box-shadow: 0 0 15px rgba(253, 185, 22, 0.4);
-        }
-
-        .layout-container {
-            width: 100%;
-        }
-    </style>
 
     <script type="application/ld+json">
     {
@@ -101,47 +77,71 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
-    <div class="sticky top-0 z-50 w-full border-b border-surface-border bg-background-dark/95 backdrop-blur-sm">
-        <div class="layout-container flex h-full grow flex-col">
-            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center py-0">
-                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
-                    <header class="flex items-center justify-between whitespace-nowrap py-0">
-                        <div class="flex items-center gap-3 text-white">
-                            <a href="index.html" class="flex items-center gap-3">
-                                <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-20" width="120"
-                                    height="120">
-                            </a>
-                        </div>
-                        <div class="flex flex-1 justify-end gap-8">
-                            <div class="hidden md:flex items-center gap-6 lg:gap-9">
-                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#internet">Internet</a>
-                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#solar">Energía Solar</a>
-                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#servicios">Servicios</a>
-                                <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal"
-                                    href="#nosotros">Nosotros</a>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <a href="https://customer.dommatos.com"
-                                    class="glow-hover hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95">
-                                    <span class="truncate">Clientes</span>
-                                </a>
-                                <a href="https://dashboard.dommatos.com"
-                                    class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
-                                    <span class="truncate">Admin</span>
-                                </a>
-                            </div>
-                            <button class="md:hidden text-white">
-                                <span class="material-symbols-outlined">menu</span>
-                            </button>
-                        </div>
-                    </header>
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300 animate-page-enter">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
+        <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
+            <div class="flex items-center gap-3 pr-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="internet.html" data-i18n="header.nav.internet">Internet</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-dark transition-colors text-white font-bold text-xs"
+                        id="lang-toggle">
+                        <span id="lang-toggle-text">ES</span>
+                    </button>
+                    <a href="https://customer.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                        <span class="truncate" data-i18n="header.buttons.clients">Clientes</span>
+                    </a>
+                    <a href="https://dashboard.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
+                        <span class="truncate" data-i18n="header.buttons.admin">Admin</span>
+                    </a>
                 </div>
             </div>
+            <button id="mobile-menu-btn" class="md:hidden text-secondary-text dark:text-white z-50 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
         </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden animate-fade-in">
+        <nav class="flex flex-col gap-6 text-xl">
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="internet.html" data-i18n="header.nav.internet">Internet</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="https://customer.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg bg-primary text-slate-900 font-bold shadow-lg shadow-primary/20">
+                    <span data-i18n="header.buttons.clients">Clientes</span>
+                </a>
+                <a href="https://dashboard.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg border border-surface-border text-white font-bold hover:bg-surface-dark transition-colors">
+                    <span data-i18n="header.buttons.admin">Admin</span>
+                </a>
+            </div>
+        </nav>
     </div>
     <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
         <div class="layout-container flex h-full grow flex-col">
@@ -188,7 +188,7 @@
                                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAN6YQkTO_joQsf67AGvu5VlJTUwERrfGW8_3JON9J3zpvrj6XKh5JL9LhtExWlZ82UsgxRzVZjEiHBCTa-G8beCHD59l3dU403-F5_PKO_8J2FcbbEyjBmmN-7_Ic09pApSaZJHRnT_ge-2SK-MK9Ywdk-k7lipXBqjLRE2RiXaLzzYze_fvooCjl5EDZC6H6CflBKFi_8tIjTAaO0RQmLh7xxNzdBkLp6zNRF9N_VgfGYrydtGy-YuoH0TblNtBmT_dxk_-8iSgeV")'>
                                         </div>
                                     </div>
-                                    <p>+2.000 Clientes satisfechos</p>
+                                    <p>+300 Clientes satisfechos</p>
                                 </div>
                             </div>
                             <div class="w-full lg:w-1/2">
@@ -401,7 +401,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     <div class="flex flex-col gap-4">
                         <div class="flex items-center gap-2 text-white">
-                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-20">
+                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
                         </div>
                         <p class="text-text-secondary text-sm leading-relaxed">
                             Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
@@ -410,17 +410,20 @@
                     </div>
                     <div class="flex flex-col gap-4">
                         <h3 class="text-white font-bold">Servicios</h3>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Internet Fibra</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Energía Solar</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Domótica</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Integración IA</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
+                            Fibra</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía Solar</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
+                            IA</a>
                     </div>
                     <div class="flex flex-col gap-4">
                         <h3 class="text-white font-bold">Empresa</h3>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Sobre Nosotros</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
+                            Nosotros</a>
                         <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
                         <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
-                        <a class="text-text-secondary hover:text-primary text-sm" href="#">Contacto</a>
+                        <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
                     </div>
                     <div class="flex flex-col gap-4">
                         <h3 class="text-white font-bold">Novedades</h3>
@@ -453,6 +456,8 @@
         </div>
     </footer>
 
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
