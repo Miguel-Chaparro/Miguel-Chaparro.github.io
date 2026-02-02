@@ -152,12 +152,14 @@ function renderProductGrid(productsList) {
                     <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded uppercase">${product.categoria_nombre || 'Producto'}</span>
                     <span class="text-text-secondary text-xs">${product.marca}</span>
                 </div>
-                <h3 class="text-white font-bold text-lg leading-tight line-clamp-2" title="${product.nombre}">${product.nombre}</h3>
+                <h3 class="cursor-pointer text-white font-bold text-lg leading-tight line-clamp-2 hover:text-primary transition-colors" title="${product.nombre}" onclick="openProductModal(${product.id})">
+                    ${product.nombre}
+                </h3>
                 <p class="text-text-secondary text-sm line-clamp-2">${product.descripcion}</p>
                 
                 <div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-border/50">
-                    <span class="text-white font-bold text-xl">$${product.precio_venta_base}</span>
-                    <button onclick="addToCart(${product.id})" class="h-10 w-10 rounded-full bg-primary text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-primary/20">
+                    <span class="text-white font-bold text-xl">$${(product.precio_venta_base || 0).toLocaleString('es-CO')}</span>
+                    <button onclick="openProductModal(${product.id})" class="h-10 w-10 rounded-full bg-surface-dark border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-all shadow-lg shadow-primary/10" title="Ver Detalle y Agregar">
                         <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
                     </button>
                 </div>
@@ -221,7 +223,7 @@ function renderCart() {
              
              <div class="flex-1 text-center sm:text-left">
                  <h3 class="text-white font-bold text-lg">${item.name}</h3>
-                 <p class="text-primary font-bold">$${price.toLocaleString('es-CO')}</p>
+                 <p class="text-primary font-bold">$${(price || 0).toLocaleString('es-CO')}</p>
              </div>
              
              <div class="flex items-center gap-3 bg-background-dark border border-surface-border rounded-lg px-2 py-1">
@@ -231,7 +233,7 @@ function renderCart() {
              </div>
              
              <div class="flex flex-col items-end gap-2">
-                 <span class="text-white font-bold">$${subtotal.toLocaleString('es-CO')}</span>
+                 <span class="text-white font-bold">$${(subtotal || 0).toLocaleString('es-CO')}</span>
                  <button onclick="removeFromCart(${item.id})" class="text-red-500 hover:text-red-400 text-sm flex items-center gap-1">
                      <span class="material-symbols-outlined text-sm">delete</span> Eliminar
                  </button>
@@ -463,3 +465,6 @@ window.fetchProducts = fetchProducts;
 window.addToCart = addToCart;
 window.updateQuantity = updateQuantity;
 window.removeFromCart = removeFromCart;
+window.openProductModal = openProductModal;
+window.closeProductModal = closeProductModal;
+window.updateModalQuantity = updateModalQuantity;
