@@ -246,17 +246,81 @@ function renderCart() {
 
 // --- Cart Logic ---
 
-function addToCart(productId) {
-    // If on homepage, we might not have products array populated fully if fetchProducts wasn't called.
-    // However, initHome calls fetchCategories, initStore calls fetchProducts.
-    // If needed we can fetch singular product but usually products list is available or passed.
+// --- Modal Logic ---
 
-    // For simplicity, we assume 'products' is populated. If adding from carousel, we might need logic change.
+let currentModalProductId = null;
+
+function openProductModal(productId) {
     const product = products.find(p => p.id === productId);
+    if (!product) return;
 
-    // Strategy: If product not found in 'products' global (e.g. on home page carousel), 
-    // we would ideally need to fetch it. For now, assuming user is on Product Page or products are loaded.
+    currentModalProductId = productId;
 
+    // Populate Modal Data
+    document.getElementById('modal-image').src = product.foto_url || 'assets/images/placeholder.png';
+    document.getElementById('modal-image-placeholder').style.display = product.foto_url ? 'none' : 'flex';
+    document.getElementById('modal-category').textContent = product.categoria_nombre || 'Producto';
+    document.getElementById('modal-brand').textContent = product.marca || '';
+    document.getElementById('modal-title').textContent = product.nombre;
+    document.getElementById('modal-sku').textContent = `SKU: ${product.sku || 'N/A'}`;
+    document.getElementById('modal-description').textContent = product.descripcion || 'Sin descripción disponible.';
+    document.getElementById('modal-price').textContent = `$${product.precio_venta_base.toLocaleString('es-CO')}`;
+    document.getElementById('modal-quantity').value = 1;
+
+    // Show Modal
+    const modal = document.getElementById('product-modal');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        document.getElementById('modal-backdrop').classList.remove('opacity-0');
+        document.getElementById('modal-panel').classList.remove('opacity-0', 'scale-95');
+    }, 10);
+
+    // Update Add Button Action
+    const addBtn = document.getElementById('modal-add-btn');
+    addBtn.onclick = () => {
+        const qty = parseInt(document.getElementById('modal-quantity').value) || 1;
+        addToCart(product.id, qty);
+        closeProductModal();
+    };
+}
+
+function closeProductModal() {
+    const backdrop = document.getElementById('modal-backdrop');
+    const panel = document.getElementById('modal-panel');
+
+    if (backdrop && panel) {
+        backdrop.classList.add('opacity-0');
+        panel.classList.add('opacity-0', 'scale-95');
+
+        setTimeout(() => {
+            document.getElementById('product-modal').classList.add('hidden');
+            currentModalProductId = null;
+        }, 300);
+    }
+}
+
+function updateModalQuantity(change) {
+    const input = document.getElementById('modal-quantity');
+    let val = parseInt(input.value) || 1;
+    val += change;
+    if (val < 1) val = 1;
+    if (val > 99) val = 99;
+    input.value = val;
+}
+
+// Close modal on backdrop click
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProductModal();
+});
+if (document.getElementById('product-modal')) {
+    // We need to wait for DOM or checking existence
+    // But easier to add onclick to backdrop in HTML, or add listener here if element exists
+}
+
+// --- Cart Logic ---
+
+function addToCart(productId, quantity = 1) {
+    const product = products.find(p => p.id === productId);
     if (!product) {
         console.warn('Product not found in local cache');
         return;
@@ -264,20 +328,20 @@ function addToCart(productId) {
 
     const existing = cart.find(item => item.id === productId);
     if (existing) {
-        existing.quantity += 1;
+        existing.quantity += quantity;
     } else {
         cart.push({
             id: product.id,
             name: product.nombre,
             price: product.precio_venta_base,
             image: product.foto_url,
-            quantity: 1
+            quantity: quantity
         });
     }
 
     saveCart();
     updateCartUI();
-    showToast(`Agregado: ${product.nombre}`);
+    showToast(`Agregado: ${product.nombre} (${quantity})`);
 }
 
 function updateQuantity(productId, change) {
