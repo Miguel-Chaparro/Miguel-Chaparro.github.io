@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Carrito de Compras | Dommatos</title>
+    <meta name="description" content="Revisa tu carrito de compras y solicita tu cotización.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        // Apply Tailwind Config
+        tailwind.config = window.tailwindConfig || tailwind.config;
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
+        <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
+            <div class="flex items-center gap-3 pr-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-14 w-auto object-contain">
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="internet.html" data-i18n="header.nav.internet">Internet</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="productos.html" data-i18n="header.nav.store">Tienda</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a href="carrito.html"
+                        class="relative h-10 w-10 rounded-full bg-surface-dark border border-primary text-primary hover:bg-surface-border transition-colors flex items-center justify-center mr-2">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span id="cart-count"
+                            class="cart-badge absolute top-1 right-1 h-4 w-4 rounded-full bg-primary text-[10px] font-bold text-slate-900 flex items-center justify-center hidden">0</span>
+                    </a>
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-dark transition-colors text-white font-bold text-xs"
+                        id="lang-toggle">
+                        <span id="lang-toggle-text">ES</span>
+                    </button>
+                    <a href="https://customer.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-slate-900 text-sm font-bold leading-normal tracking-[0.015em] transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                        <span class="truncate" data-i18n="header.buttons.clients">Clientes</span>
+                    </a>
+                    <a href="https://dashboard.dommatos.com"
+                        class="hidden sm:flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-surface-border text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-surface-dark transition-colors">
+                        <span class="truncate" data-i18n="header.buttons.admin">Admin</span>
+                    </a>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-secondary-text dark:text-white z-50 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden animate-fade-in">
+        <nav class="flex flex-col gap-6 text-xl">
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="internet.html" data-i18n="header.nav.internet">Internet</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="servicios.html" data-i18n="header.nav.services">Servicios</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="productos.html" data-i18n="header.nav.store">Tienda</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="nosotros.html" data-i18n="header.nav.about">Nosotros</a>
+
+            <div class="flex flex-col gap-4 mt-2">
+                <a href="carrito.html"
+                    class="flex items-center justify-center w-full h-12 rounded-lg border border-primary text-primary font-bold hover:bg-surface-dark transition-colors relative">
+                    <span class="material-symbols-outlined mr-2">shopping_cart</span>
+                    <span>Carrito</span>
+                    <span
+                        class="cart-badge ml-2 bg-primary text-slate-900 text-xs font-bold px-2 py-0.5 rounded-full hidden">0</span>
+                </a>
+                <a href="https://customer.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg bg-primary text-slate-900 font-bold shadow-lg shadow-primary/20">
+                    <span data-i18n="header.buttons.clients">Clientes</span>
+                </a>
+                <a href="https://dashboard.dommatos.com"
+                    class="flex items-center justify-center w-full h-12 rounded-lg border border-surface-border text-white font-bold hover:bg-surface-dark transition-colors">
+                    <span data-i18n="header.buttons.admin">Admin</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    </div>
+
+    <div id="page-content" class="animate-page-enter">
+
+        <main class="flex-grow pt-8 pb-20 px-4 md:px-10 lg:px-40">
+            <div class="max-w-[1200px] mx-auto">
+
+                <div class="mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Carrito de Compras</h1>
+                    <p class="text-text-secondary">Revisa tus productos y completa tus datos para solicitar una
+                        cotización.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                    <!-- Cart Items List -->
+                    <div class="lg:col-span-8 flex flex-col gap-6">
+                        <div id="cart-items-container" class="flex flex-col gap-4">
+                            <!-- Items injected by JS -->
+                            <div class="bg-surface-dark border border-surface-border rounded-xl p-8 text-center">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-text-secondary mb-4">shopping_cart_off</span>
+                                <p class="text-text-secondary">Tu carrito está vacío.</p>
+                                <a href="productos.html"
+                                    class="inline-block mt-4 text-primary font-bold hover:underline">Ir a la Tienda</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Form -->
+                    <div class="lg:col-span-4">
+                        <div class="bg-surface-dark border border-surface-border rounded-xl p-6 sticky top-24">
+                            <h2 class="text-xl font-bold text-white mb-6 border-b border-surface-border pb-4">Datos para
+                                Cotización</h2>
+
+                            <form id="checkout-form" class="flex flex-col gap-4">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-bold text-text-secondary mb-1">Nombre
+                                        Completo</label>
+                                    <input type="text" id="nombre" required
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
+                                        placeholder="Juan Pérez">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-bold text-text-secondary mb-1">Correo
+                                        Electrónico</label>
+                                    <input type="email" id="email" required
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
+                                        placeholder="juan@ejemplo.com">
+                                </div>
+
+                                <div>
+                                    <label for="telefono"
+                                        class="block text-sm font-bold text-text-secondary mb-1">Teléfono</label>
+                                    <input type="tel" id="telefono" required
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
+                                        placeholder="300 123 4567">
+                                </div>
+
+                                <div>
+                                    <label for="notas" class="block text-sm font-bold text-text-secondary mb-1">Notas
+                                        Adicionales</label>
+                                    <textarea id="notas" rows="3"
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
+                                        placeholder="Instrucciones especiales, fecha de entrega deseada, etc."></textarea>
+                                </div>
+
+                                <div class="mt-4 pt-4 border-t border-surface-border">
+                                    <div class="flex justify-between items-center mb-6">
+                                        <span class="text-text-secondary">Total Estimado</span>
+                                        <span id="cart-total" class="text-2xl font-bold text-white">$0</span>
+                                    </div>
+
+                                    <button type="submit" id="checkout-btn"
+                                        class="w-full bg-primary hover:bg-yellow-400 text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2">
+                                        <span>Solicitar Cotización</span>
+                                        <span class="material-symbols-outlined">send</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8">
+            <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+                <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                        <div class="flex flex-col gap-4">
+                            <div class="flex items-center gap-2 text-white">
+                                <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                            </div>
+                            <p class="text-text-secondary text-sm leading-relaxed">
+                                Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía
+                                renovable.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Servicios</h3>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="internet.html">Internet
+                                Fibra</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="solar.html">Energía
+                                Solar</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Domótica</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="servicios.html">Integración
+                                IA</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Empresa</h3>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Sobre
+                                Nosotros</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="#">Blog</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="#">Carreras</a>
+                            <a class="text-text-secondary hover:text-primary text-sm" href="nosotros.html">Contacto</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-white font-bold">Novedades</h3>
+                            <p class="text-text-secondary text-sm">Suscríbete para recibir noticias sobre tecnología
+                                sostenible.</p>
+                            <div class="flex gap-2">
+                                <input
+                                    class="bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-white text-sm w-full focus:outline-none focus:border-primary"
+                                    placeholder="Tu email" type="email" />
+                                <button
+                                    class="bg-primary text-slate-900 rounded-lg px-3 py-2 font-bold hover:bg-opacity-90">
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                        <div class="flex gap-6">
+                            <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                                <span class="text-sm">Privacidad</span>
+                            </a>
+                            <a class="text-text-secondary hover:text-white transition-colors" href="#">
+                                <span class="text-sm">Términos</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/ecommerce.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
