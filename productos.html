@@ -318,6 +318,55 @@
         </div>
     </div>
 
+    <!-- Floating Cart Button -->
+    <div class="fab-container">
+        <button onclick="toggleSidebarCart()" class="fab-button" title="Ver Carrito">
+            <span class="material-symbols-outlined text-3xl">shopping_cart</span>
+            <span id="fab-badge" class="fab-badge hidden">0</span>
+        </button>
+    </div>
+
+    <!-- Sidebar Mini-Cart -->
+    <div id="sidebar-cart"
+        class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-surface-dark border-l border-surface-border translate-x-full z-[101] flex flex-col shadow-2xl">
+        <div class="p-6 border-b border-surface-border flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary">shopping_basket</span>
+                <h3 class="text-white font-bold text-xl">Tu Carrito</h3>
+            </div>
+            <button onclick="toggleSidebarCart()" class="text-text-secondary hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl">chevron_right</span>
+            </button>
+        </div>
+
+        <!-- Sidebar Content -->
+        <div id="sidebar-cart-items" class="flex-1 overflow-y-auto p-6 flex flex-col gap-4">
+            <!-- Items injected by JS -->
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div id="sidebar-footer" class="p-6 border-t border-surface-border bg-background-dark/50 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <span class="text-text-secondary uppercase text-xs font-bold tracking-wider">Subtotal</span>
+                <span id="sidebar-total" class="text-white font-bold text-xl">$0</span>
+            </div>
+            <div class="flex flex-col gap-3 mt-2">
+                <a href="carrito.html"
+                    class="bg-primary hover:bg-yellow-400 text-slate-900 font-bold py-3 px-6 rounded-lg text-center transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    Finalizar Compra
+                </a>
+                <button onclick="toggleSidebarCart()"
+                    class="bg-surface-border/50 hover:bg-surface-border text-white py-3 px-6 rounded-lg font-bold transition-all">
+                    Seguir Comprando
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Backdrop -->
+    <div id="sidebar-backdrop" onclick="toggleSidebarCart()"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none z-[100]"></div>
+
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/ecommerce.js"></script>
     <script src="assets/js/main.js"></script>

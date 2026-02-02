@@ -344,6 +344,12 @@ function addToCart(productId, quantity = 1) {
     saveCart();
     updateCartUI();
     showToast(`Agregado: ${product.nombre} (${quantity})`);
+
+    // Pro-active UI: Open sidebar to show the user their current cart state
+    const sidebar = document.getElementById('sidebar-cart');
+    if (sidebar && sidebar.classList.contains('translate-x-full')) {
+        toggleSidebarCart();
+    }
 }
 
 function updateQuantity(productId, change) {
@@ -383,6 +389,82 @@ function updateCartUI() {
         badge.textContent = totalCount;
         badge.classList.toggle('hidden', totalCount === 0);
     });
+
+    // Update FAB badge
+    const fabBadge = document.getElementById('fab-badge');
+    if (fabBadge) {
+        fabBadge.textContent = totalCount;
+        fabBadge.classList.toggle('hidden', totalCount === 0);
+    }
+
+    // Always re-render sidebar if it's open (or just always for simplicity)
+    renderSidebarCart();
+}
+
+function toggleSidebarCart() {
+    const sidebar = document.getElementById('sidebar-cart');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    if (!sidebar) return;
+
+    const isHidden = sidebar.classList.contains('translate-x-full');
+
+    if (isHidden) {
+        sidebar.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        renderSidebarCart();
+    } else {
+        sidebar.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+    }
+}
+
+function renderSidebarCart() {
+    const container = document.getElementById('sidebar-cart-items');
+    const totalEl = document.getElementById('sidebar-total');
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12 text-center">
+                <span class="material-symbols-outlined text-5xl text-surface-border mb-4">shopping_cart_off</span>
+                <p class="text-text-secondary font-medium">Tu carrito está vacío</p>
+                <button onclick="toggleSidebarCart()" class="text-primary text-sm mt-2 hover:underline">Ir a comprar</button>
+            </div>
+        `;
+        totalEl.textContent = '$0';
+        return;
+    }
+
+    let total = 0;
+    container.innerHTML = cart.map(item => {
+        const price = item.price || 0;
+        const subtotal = price * item.quantity;
+        total += subtotal;
+
+        return `
+            <div class="flex gap-4 p-3 bg-background-dark/30 rounded-xl border border-surface-border/50 group">
+                <div class="h-16 w-16 bg-surface-border/30 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('${item.image || 'assets/images/placeholder.png'}');"></div>
+                
+                <div class="flex-1 min-w-0">
+                    <h4 class="text-white font-bold text-sm truncate">${item.name}</h4>
+                    <p class="text-primary font-bold text-sm">$${price.toLocaleString('es-CO')}</p>
+                    
+                    <div class="flex items-center justify-between mt-2">
+                        <div class="flex items-center gap-2 bg-surface-dark border border-surface-border rounded-lg px-2 py-0.5 scale-90 origin-left">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="text-text-secondary hover:text-white">-</button>
+                            <span class="text-white font-bold text-sm w-4 text-center">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="text-text-secondary hover:text-white">+</button>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-red-500/50 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined text-lg">delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    totalEl.textContent = `$${total.toLocaleString('es-CO')}`;
 }
 
 function showToast(message) {
@@ -468,3 +550,4 @@ window.removeFromCart = removeFromCart;
 window.openProductModal = openProductModal;
 window.closeProductModal = closeProductModal;
 window.updateModalQuantity = updateModalQuantity;
+window.toggleSidebarCart = toggleSidebarCart;
