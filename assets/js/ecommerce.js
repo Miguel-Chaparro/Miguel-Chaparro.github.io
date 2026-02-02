@@ -65,14 +65,47 @@ async function fetchCategories() {
 
 async function fetchProducts(page = 1) {
     try {
-        // Using a generous limit for now as per user request to show "all"
-        // But respecting pagination logic if needed later
-        const response = await fetch(`${API_BASE_URL}/productos?page=${page}&limit=50`);
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryId = urlParams.get('category'); // From our own links
+
+        let apiUrl = `${API_BASE_URL}/productos?page=${page}&limit=50`;
+
+        // Map 'category' param to 'categoria_id' API param requested by user
+        if (categoryId) {
+            apiUrl += `&categoria_id=${categoryId}`;
+        }
+
+        // Pass through other potential filters if they exist in URL matching API params
+        // User mentioned: nombre, marca, modelo, sku, codigo_barras
+        const allowedFilters = ['nombre', 'marca', 'modelo', 'sku', 'codigo_barras', 'categoria_id'];
+        allowedFilters.forEach(param => {
+            // Avoid duplicating if we already mapped category -> categoria_id
+            if (param === 'categoria_id' && categoryId) return;
+
+            const value = urlParams.get(param);
+            if (value) {
+                apiUrl += `&${param}=${encodeURIComponent(value)}`;
+            }
+        });
+
+        const response = await fetch(apiUrl);
         const result = await response.json();
         if (result.success) {
             products = result.data; // Store for local filtering if needed
             renderProductGrid(result.data);
             renderPagination(result.pagination);
+
+            // Show active filter feedback if applicable
+            if (categoryId || urlParams.toString()) {
+                const header = document.querySelector('.layout-content-container h2') || document.querySelector('h1');
+                if (header && !document.getElementById('filter-feedback')) {
+                    const filterMsg = document.createElement('p');
+                    filterMsg.id = 'filter-feedback';
+                    filterMsg.className = 'text-primary text-sm font-bold mt-2 animate-fade-in';
+                    filterMsg.innerHTML = `Filtrando por: ${categoryId ? 'Categoría' : 'Filtros activos'} <a href="productos.html" class="text-white hover:underline font-normal ml-2">(Limpiar filtros)</a>`;
+                    header.parentElement.appendChild(filterMsg);
+                }
+            }
         }
     } catch (error) {
         console.error('Error loading products:', error);
