@@ -33,6 +33,65 @@ document.addEventListener('DOMContentLoaded', () => {
 async function initHome() {
     const categories = await fetchCategories();
     renderCarousel(categories);
+
+    // Check if "KITS" category exists and promote it
+    const kitsCategory = categories.find(cat => cat.nombre.toUpperCase() === 'KITS');
+    if (kitsCategory) {
+        promoteKits(kitsCategory.id);
+    }
+}
+
+async function promoteKits(categoryId) {
+    const container = document.getElementById('kits-promotion-container');
+    const grid = document.getElementById('kits-products-grid');
+    const viewAllBtn = document.getElementById('view-all-kits-btn');
+
+    if (!container || !grid) return;
+
+    try {
+        // Fetch products for the KITS category
+        const response = await fetch(`${API_BASE_URL}/productos?categoria_id=${categoryId}&limit=6`);
+        const result = await response.json();
+
+        if (result.success && result.data.length > 0) {
+            products = result.data; // Update global products cache for modal/cart
+            container.classList.remove('hidden');
+            if (viewAllBtn) viewAllBtn.href = `productos.html?category=${categoryId}`;
+
+            grid.innerHTML = result.data.map(product => `
+                <div class="bg-surface-dark border border-surface-border rounded-xl overflow-hidden hover:border-primary/50 transition-colors flex flex-col group">
+                    <div class="h-48 bg-surface-border/50 bg-cover bg-center overflow-hidden" style="background-image: url('${product.foto_url || 'assets/images/placeholder.png'}');">
+                        ${!product.foto_url ? '<div class="h-full w-full flex items-center justify-center text-text-secondary"><span class="material-symbols-outlined text-4xl">image_not_supported</span></div>' : ''}
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <button onclick="openProductModal(${product.id})" class="bg-primary text-slate-900 px-4 py-2 rounded-lg font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform">Ver Detalle</button>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col gap-3 flex-1">
+                        <div class="flex justify-between items-start">
+                            <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded uppercase">Kit Especial</span>
+                            <span class="text-text-secondary text-xs">${product.marca}</span>
+                        </div>
+                        <h3 class="cursor-pointer text-white font-bold text-lg leading-tight line-clamp-2 hover:text-primary transition-colors" title="${product.nombre}" onclick="openProductModal(${product.id})">
+                            ${product.nombre}
+                        </h3>
+                        <p class="text-text-secondary text-sm line-clamp-2">${product.descripcion}</p>
+                        
+                        <div class="mt-auto pt-4 flex items-center justify-between border-t border-surface-border/50">
+                            <div class="flex flex-col">
+                                <span class="text-text-secondary text-xs line-through">$${((product.precio_venta_base || 0) * 1.2).toLocaleString('es-CO')}</span>
+                                <span class="text-white font-bold text-xl">$${(product.precio_venta_base || 0).toLocaleString('es-CO')}</span>
+                            </div>
+                            <button onclick="addToCart(${product.id})" class="h-10 w-10 rounded-full bg-surface-dark border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-slate-900 transition-all shadow-lg shadow-primary/10" title="Agregar al Carrito">
+                                <span class="material-symbols-outlined text-xl">add_shopping_cart</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+    } catch (error) {
+        console.error('Error promoting kits:', error);
+    }
 }
 
 async function initStore() {
@@ -123,8 +182,11 @@ function renderCarousel(categories) {
     carouselContainer.innerHTML = categories.map(cat => `
         <div class="carousel-item min-w-[200px] md:min-w-[250px] p-4 snap-start">
             <div class="bg-surface-dark border border-surface-border rounded-xl p-6 flex flex-col gap-4 items-center text-center hover:border-primary/50 transition-colors h-full">
-                <div class="h-16 w-16 rounded-full bg-surface-border/30 flex items-center justify-center text-primary">
-                     <span class="material-symbols-outlined text-3xl">category</span>
+                <div class="h-24 w-24 rounded-xl bg-surface-border/30 overflow-hidden flex items-center justify-center text-primary mb-2">
+                    ${cat.foto_url
+            ? `<img src="${cat.foto_url}" alt="${cat.nombre}" class="w-full h-full object-cover">`
+            : `<span class="material-symbols-outlined text-4xl">category</span>`
+        }
                 </div>
                 <h3 class="text-white font-bold text-lg">${cat.nombre}</h3>
                 <p class="text-text-secondary text-sm line-clamp-2">${cat.descripcion}</p>
