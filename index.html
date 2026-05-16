@@ -90,6 +90,8 @@
                     <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
                         href="internet.html" data-i18n="header.nav.internet">Internet</a>
                     <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
+                        href="speedtest.html">Test Velocidad</a>
+                    <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
                         href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
                     <a class="text-white hover:text-primary hover:scale-105 transition-all text-sm font-medium leading-normal inline-block"
                         href="servicios.html" data-i18n="header.nav.services">Servicios</a>
@@ -132,6 +134,8 @@
         <nav class="flex flex-col gap-6 text-xl">
             <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
                 href="internet.html" data-i18n="header.nav.internet">Internet</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
+                href="speedtest.html">Test Velocidad</a>
             <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
                 href="solar.html" data-i18n="header.nav.solar">Energía Solar</a>
             <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4"
@@ -248,6 +252,40 @@
                             <p class="text-slate-600 dark:text-text-secondary text-lg">Todo lo que necesitas para un
                                 hogar
                                 inteligente y eficiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Speed Test Banner -->
+        <div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark py-10">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center">
+                    <div class="layout-content-container flex flex-col max-w-[1200px] w-full">
+                        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-surface-dark to-background-dark border border-surface-border p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 group">
+                            <div class="absolute inset-0 bg-[url('assets/images/grid-pattern.svg')] opacity-10"></div>
+                            <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-all duration-500"></div>
+                            
+                            <div class="relative z-10 flex flex-col gap-4 text-center md:text-left">
+                                <div class="inline-flex items-center justify-center md:justify-start gap-2 text-primary font-bold tracking-wider text-sm uppercase">
+                                    <span class="material-symbols-outlined text-[20px] animate-pulse">network_check</span>
+                                    <span>Herramienta Gratuita</span>
+                                </div>
+                                <h2 class="text-white text-3xl md:text-4xl font-black leading-tight">
+                                    ¿Conoces tu velocidad real de Internet?
+                                </h2>
+                                <p class="text-text-secondary text-base max-w-xl">
+                                    Realiza una prueba de velocidad instantánea. Mide tu latencia, velocidad de descarga y carga en Kbps al instante con nuestra herramienta profesional.
+                                </p>
+                            </div>
+                            
+                            <div class="relative z-10 shrink-0">
+                                <a href="speedtest.html" class="flex items-center justify-center gap-3 bg-primary hover:bg-yellow-400 text-slate-900 text-lg font-bold py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(253,185,22,0.3)] hover:shadow-[0_0_30px_rgba(253,185,22,0.5)] transition-all active:scale-95 group-hover:-translate-y-1">
+                                    <span class="material-symbols-outlined text-2xl">speed</span>
+                                    Iniciar Test Ahora
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

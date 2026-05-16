@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test de Velocidad | Dommatos</title>
+    <meta name="description" content="Consulta la velocidad de tu servicio de acceso a Internet de forma gratuita con Dommatos. Mide latencia, descarga y carga al instante.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/tailwind-config.js"></script>
+    <script>
+        tailwind.config = window.tailwindConfig || tailwind.config;
+    </script>
+    <style>
+        .dashboard-card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .gauge-svg {
+            transform: rotate(-90deg);
+        }
+        
+        .gauge-circle {
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;
+            transition: stroke-dashoffset 0.5s ease-out;
+        }
+
+        .glow-yellow {
+            filter: drop-shadow(0 0 8px rgba(253, 185, 22, 0.4));
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.2; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        
+        .active-pulse {
+            animation: pulse-ring 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white overflow-x-hidden transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-md border-b border-surface-border">
+        <div class="px-5 md:px-10 lg:px-40 py-2 flex items-center justify-between mx-auto max-w-[1200px]">
+            <div class="flex items-center gap-3 pr-4">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-14 w-auto object-contain">
+                </a>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+                <nav class="flex items-center gap-6 lg:gap-9">
+                    <a class="text-white hover:text-primary transition-all text-sm font-medium leading-normal inline-block" href="index.html">Inicio</a>
+                    <a class="text-white hover:text-primary transition-all text-sm font-medium leading-normal inline-block" href="internet.html">Internet</a>
+                    <a class="text-primary hover:scale-105 transition-all text-sm font-bold leading-normal inline-block" href="speedtest.html">Test de Velocidad</a>
+                    <a class="text-white hover:text-primary transition-all text-sm font-medium leading-normal inline-block" href="productos.html">Tienda</a>
+                </nav>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white z-50 relative">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl pt-24 px-6 md:hidden">
+        <nav class="flex flex-col gap-6 text-xl">
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4" href="index.html">Inicio</a>
+            <a class="text-white hover:text-primary transition-colors font-medium border-b border-white/10 pb-4" href="internet.html">Internet</a>
+            <a class="text-primary transition-colors font-bold border-b border-white/10 pb-4" href="speedtest.html">Test de Velocidad</a>
+        </nav>
+    </div>
+
+    <div class="relative flex w-full flex-col min-h-screen">
+        <div class="layout-container flex h-full grow flex-col py-10">
+            <div class="px-5 md:px-10 lg:px-40 flex flex-1 justify-center">
+                <div class="layout-content-container flex flex-col max-w-[1000px] w-full gap-8">
+                    
+                    <div class="text-center space-y-4">
+                        <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight">Test de Velocidad <span class="text-primary">Dommatos</span></h1>
+                        <p class="text-text-secondary text-lg max-w-2xl mx-auto">Mide la calidad de tu conexión a Internet en tiempo real. Obtén datos precisos de latencia, velocidad de descarga y carga.</p>
+                    </div>
+
+                    <div class="w-full h-[800px] md:h-[850px] mt-6 rounded-3xl overflow-hidden dashboard-card shadow-2xl border border-white/5 relative flex items-center justify-center bg-[#001e2b]">
+                        <!-- Aplicamos un filtro de color para convertir el azul de Azteca en el amarillo de Dommatos -->
+                        <iframe src="https://medidor.azteca-comunicaciones.com/?notitle=1&embed=1" 
+                                style="border:none; width:100%; height:100%; min-height: 800px; filter: hue-rotate(215deg) saturate(2.5) brightness(1.1);" 
+                                title="Test de Velocidad" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-surface-dark border-t border-surface-border pt-16 pb-8 mt-auto">
+        <div class="px-5 md:px-10 lg:px-40 flex justify-center">
+            <div class="max-w-[1200px] w-full flex flex-col gap-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2 text-white">
+                            <img src="assets/images/logo.png" alt="Dommatos Logo" class="h-16">
+                        </div>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            Llevando el futuro a tu hogar con soluciones de internet de alta velocidad y energía renovable.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-text-secondary text-sm">© 2023 Dommatos Inc. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            if(menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+    <script src="assets/js/speedtest-ui.js"></script>
+</body>
+</html>
