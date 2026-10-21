@@ -549,18 +549,31 @@ async function handleCheckout(e) {
     const btn = document.getElementById('checkout-btn');
     const originalText = btn.innerHTML;
     btn.disabled = true;
-    btn.innerHTML = '<span class="animate-spin h-5 w-5 border-2 border-slate-900 border-t-transparent rounded-full mr-2"></span> Enviando...';
+    btn.innerHTML = '<span class="animate-spin h-5 w-5 border-2 border-slate-900 border-t-transparent rounded-full mr-2"></span> Enviando pedido...';
+
+    const cleanPhone = (document.getElementById('telefono')?.value || '').replace(/[^\d+]/g, '');
+    const direccion = document.getElementById('direccion')?.value || '';
+    const complemento = document.getElementById('complemento')?.value || '';
+    const barrio = document.getElementById('barrio')?.value || '';
+    const metodoPago = document.getElementById('metodo_pago')?.value || 'Contra entrega - Efectivo';
+    const notas = document.getElementById('notas')?.value || '';
 
     const formData = {
-        prospecto_nombre: document.getElementById('nombre').value,
-        prospecto_email: document.getElementById('email').value,
-        prospecto_telefono: document.getElementById('telefono').value,
-        fecha_vencimiento: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 15 days validity
-        notas_cliente: document.getElementById('notas').value,
+        prospecto_nombre: document.getElementById('nombre').value.trim(),
+        prospecto_email: document.getElementById('email').value.trim().toLowerCase(),
+        prospecto_telefono: cleanPhone,
+        fecha_vencimiento: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 15 días de validez
+        direccion: direccion.trim(),
+        complemento: complemento.trim(),
+        barrio: barrio.trim(),
+        metodo_pago: metodoPago,
+        indicaciones_entrega: notas.trim(),
+        notas_cliente: notas.trim() || 'Pedido de productos para entrega a domicilio.',
+        empresa_host: 'dommatos.com',
         detalles: cart.map(item => ({
-            producto_id: item.id,
-            cantidad: item.quantity,
-            precio_unitario_cotizado: typeof item.price === 'string' ? parseFloat(item.price.replace(/[^\d.]/g, '')) : item.price
+            producto_id: Number(item.id) || parseInt(item.id, 10),
+            cantidad: Number(item.quantity) || 1,
+            precio_unitario_cotizado: typeof item.price === 'string' ? parseFloat(item.price.replace(/[^\d.]/g, '')) : Number(item.price || 0)
         }))
     };
 
@@ -568,7 +581,8 @@ async function handleCheckout(e) {
         const response = await fetch(`${API_BASE_URL}/cotizaciones`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-empresa-host': 'dommatos.com'
             },
             body: JSON.stringify(formData)
         });
@@ -583,21 +597,27 @@ async function handleCheckout(e) {
 
             // Show success
             cartItemsContainer.innerHTML = `
-                <div class="bg-surface-dark border border-green-500 rounded-xl p-8 text-center animate-fade-in">
-                    <span class="material-symbols-outlined text-5xl text-green-500 mb-4">check_circle</span>
-                    <h3 class="text-white text-2xl font-bold mb-2">¡Cotización Enviada!</h3>
-                    <p class="text-text-secondary">Hemos recibido tu solicitud. Te contactaremos pronto al correo <strong>${formData.prospecto_email}</strong>.</p>
-                    <a href="productos.html" class="inline-block mt-6 px-6 py-3 bg-primary text-slate-900 font-bold rounded-lg hover:bg-yellow-400 transition-colors">Volver a la Tienda</a>
+                <div class="bg-surface-dark border border-green-500 rounded-xl p-8 text-center animate-fade-in space-y-4">
+                    <span class="material-symbols-outlined text-6xl text-green-500">check_circle</span>
+                    <h3 class="text-white text-2xl font-bold">¡Pedido y Domicilio Recibido!</h3>
+                    <p class="text-text-secondary text-sm">Hemos registrado tu solicitud con ID <strong>#${result.data?.cotizacion_id || ''}</strong>.</p>
+                    <div class="bg-background-dark/80 border border-surface-border rounded-lg p-4 text-left text-xs text-text-secondary space-y-1.5">
+                        <p><strong class="text-white">📍 Entrega:</strong> ${direccion} ${complemento ? '(' + complemento + ')' : ''} - ${barrio}</p>
+                        <p><strong class="text-white">💵 Pago:</strong> ${metodoPago}</p>
+                        <p><strong class="text-white">👤 Cliente:</strong> ${formData.prospecto_nombre} (${formData.prospecto_telefono})</p>
+                    </div>
+                    <p class="text-xs text-slate-400">Nuestro equipo de despachos se pondrá en contacto para coordinar la entrega en la menor brevedad.</p>
+                    <a href="productos.html" class="inline-block mt-4 px-6 py-3 bg-primary text-slate-900 font-bold rounded-lg hover:bg-yellow-400 transition-colors">Volver al Catálogo</a>
                 </div>
             `;
             document.getElementById('checkout-form').reset();
         } else {
-            throw new Error(result.message || 'Error al enviar cotización');
+            throw new Error(result.message || (result.error && result.error.message) || 'Error al enviar cotización');
         }
 
     } catch (error) {
         console.error('Checkout error:', error);
-        showToast('Error al enviar. Intente nuevamente.');
+        showToast('Error al enviar el pedido: ' + (error.message || 'Intente nuevamente'));
     } finally {
         btn.disabled = false;
         btn.innerHTML = originalText;

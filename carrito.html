@@ -144,51 +144,87 @@
                     <!-- Checkout Form -->
                     <div class="lg:col-span-4">
                         <div class="bg-surface-dark border border-surface-border rounded-xl p-6 sticky top-24">
-                            <h2 class="text-xl font-bold text-white mb-6 border-b border-surface-border pb-4">Datos para
-                                Cotización</h2>
+                            <h2 class="text-xl font-bold text-white mb-2 border-b border-surface-border pb-3 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">local_shipping</span>
+                                Pedido & Domicilio Rápido
+                            </h2>
+                            <p class="text-xs text-text-secondary mb-4">Ingresa tus datos y dirección para despachar tu pedido de forma rápida.</p>
 
-                            <form id="checkout-form" class="flex flex-col gap-4">
+                            <form id="checkout-form" class="flex flex-col gap-3">
                                 <div>
-                                    <label for="nombre" class="block text-sm font-bold text-text-secondary mb-1">Nombre
-                                        Completo</label>
+                                    <label for="nombre" class="block text-xs font-bold text-text-secondary mb-1">Nombre
+                                        Completo *</label>
                                     <input type="text" id="nombre" required
-                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
-                                        placeholder="Juan Pérez">
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                        placeholder="Ej: Juan Pérez">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="telefono"
+                                            class="block text-xs font-bold text-text-secondary mb-1">Teléfono / WhatsApp *</label>
+                                        <input type="tel" id="telefono" required
+                                            class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                            placeholder="300 123 4567">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-xs font-bold text-text-secondary mb-1">Correo
+                                            Electrónico *</label>
+                                        <input type="email" id="email" required
+                                            class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                            placeholder="juan@ejemplo.com">
+                                    </div>
                                 </div>
 
                                 <div>
-                                    <label for="email" class="block text-sm font-bold text-text-secondary mb-1">Correo
-                                        Electrónico</label>
-                                    <input type="email" id="email" required
-                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
-                                        placeholder="juan@ejemplo.com">
+                                    <label for="direccion" class="block text-xs font-bold text-text-secondary mb-1">Dirección de Entrega *</label>
+                                    <input type="text" id="direccion" required
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                        placeholder="Ej: Calle 6C # 82A - 57 o Edificio">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label for="complemento" class="block text-xs font-bold text-text-secondary mb-1">Apto / Casa / Torre</label>
+                                        <input type="text" id="complemento"
+                                            class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                            placeholder="Apto 302, Torre B">
+                                    </div>
+                                    <div>
+                                        <label for="barrio" class="block text-xs font-bold text-text-secondary mb-1">Barrio / Ciudad</label>
+                                        <input type="text" id="barrio"
+                                            class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                            placeholder="Ej: Castilla, Bogotá">
+                                    </div>
                                 </div>
 
                                 <div>
-                                    <label for="telefono"
-                                        class="block text-sm font-bold text-text-secondary mb-1">Teléfono</label>
-                                    <input type="tel" id="telefono" required
-                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
-                                        placeholder="300 123 4567">
+                                    <label for="metodo_pago" class="block text-xs font-bold text-text-secondary mb-1">Método de Pago</label>
+                                    <select id="metodo_pago"
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+                                        <option value="Contra entrega - Efectivo">Contra entrega (Efectivo)</option>
+                                        <option value="Contra entrega - Datáfono">Contra entrega (Datáfono / Tarjeta)</option>
+                                        <option value="Transferencia Bancaria - Nequi/Daviplata">Transferencia (Nequi / Daviplata / Bancolombia)</option>
+                                        <option value="Cotización formal por correo">Solo cotización previa por correo</option>
+                                    </select>
                                 </div>
 
                                 <div>
-                                    <label for="notas" class="block text-sm font-bold text-text-secondary mb-1">Notas
-                                        Adicionales</label>
-                                    <textarea id="notas" rows="3"
-                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-surface-border"
-                                        placeholder="Instrucciones especiales, fecha de entrega deseada, etc."></textarea>
+                                    <label for="notas" class="block text-xs font-bold text-text-secondary mb-1">Indicaciones o Notas de Entrega</label>
+                                    <textarea id="notas" rows="2"
+                                        class="w-full bg-background-dark border border-surface-border rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-slate-500"
+                                        placeholder="Ej: Timbrar en portería, entregar de 2 a 5 pm, etc."></textarea>
                                 </div>
 
-                                <div class="mt-4 pt-4 border-t border-surface-border">
-                                    <div class="flex justify-between items-center mb-6">
+                                <div class="mt-3 pt-3 border-t border-surface-border">
+                                    <div class="flex justify-between items-center mb-4">
                                         <span class="text-text-secondary">Total Estimado</span>
                                         <span id="cart-total" class="text-2xl font-bold text-white">$0</span>
                                     </div>
 
                                     <button type="submit" id="checkout-btn"
                                         class="w-full bg-primary hover:bg-yellow-400 text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2">
-                                        <span>Solicitar Cotización</span>
+                                        <span>Confirmar Pedido / Domicilio</span>
                                         <span class="material-symbols-outlined">send</span>
                                     </button>
                                 </div>
